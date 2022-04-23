@@ -1,0 +1,12 @@
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\bin\Debug\net6.0\DAL.Abstractions.deps.json
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\bin\Debug\net6.0\DAL.Abstractions.dll
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\bin\Debug\net6.0\ref\DAL.Abstractions.dll
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\bin\Debug\net6.0\DAL.Abstractions.pdb
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\DAL.Abstractions.csproj.AssemblyReference.cache
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\DAL.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\DAL.Abstractions.AssemblyInfoInputs.cache
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\DAL.Abstractions.AssemblyInfo.cs
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\DAL.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\DAL.Abstractions.dll
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\ref\DAL.Abstractions.dll
+C:\Users\DVO\source\repos\BookStore\DAL.Abstractions\obj\Debug\net6.0\DAL.Abstractions.pdb

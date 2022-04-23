@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e": {
+      "ProjectGuid": "0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e",
+      "DisplayName": "DAL",
+      "ColorIndex": 0
+    },
+    "698e73e8-c431-4d04-8f2c-ccd465da97f1": {
+      "ProjectGuid": "698e73e8-c431-4d04-8f2c-ccd465da97f1",
+      "DisplayName": "BLL",
+      "ColorIndex": 1
+    },
+    "21f0f6a2-9b07-4789-b0f6-7fe22fd061f9": {
+      "ProjectGuid": "21f0f6a2-9b07-4789-b0f6-7fe22fd061f9",
+      "DisplayName": "BookStoreUI",
+      "ColorIndex": 2
+    },
+    "aaafe2df-86e5-4433-95c6-5b7471942a39": {
+      "ProjectGuid": "aaafe2df-86e5-4433-95c6-5b7471942a39",
+      "DisplayName": "Core",
+      "ColorIndex": 3
+    },
+    "873a400c-7040-479c-b5e3-336dbaf100e4": {
+      "ProjectGuid": "873a400c-7040-479c-b5e3-336dbaf100e4",
+      "DisplayName": "BLL.Abstractions",
+      "ColorIndex": 4
+    },
+    "e6d4193d-91c1-4552-bef1-bbf20e5c7af4": {
+      "ProjectGuid": "e6d4193d-91c1-4552-bef1-bbf20e5c7af4",
+      "DisplayName": "DAL.Abstractions",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 6
+}
