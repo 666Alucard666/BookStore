@@ -22,7 +22,7 @@ public class OrderService : IOrderService
         }
 
         var numb = string.Empty;
-        decimal sum = 0;
+        double sum = 0;
         foreach (var book in order.Books)
         {
             numb += book.BookId;
@@ -37,7 +37,7 @@ public class OrderService : IOrderService
             User = order.User,
             UserId = order.User.UserId,
             Sum = sum,
-            //OrdersBook = order.Books.Select(b=>new OrdersBooks { BookId=b.BookId}).ToList(),
+            OrdersBook = new List<OrdersBooks>(),
         };
        
         
@@ -46,6 +46,21 @@ public class OrderService : IOrderService
             try
             { 
                 _unitOfWork.OrderRepository.Create(newOrder);
+                foreach (var book in order.Books)
+                {
+                    newOrder.OrdersBook.Add(new OrdersBooks
+                    {
+                        BookId = book.BookId,
+                        OrderId = newOrder.OrderId,
+                        Order = newOrder,
+                        Book = book
+                    });
+                    _unitOfWork.BookRepository.FirstOrDefault(b=>b.BookId == book.BookId).OrdersBook = newOrder.OrdersBook;
+                    _unitOfWork.BookRepository.Update(_unitOfWork.BookRepository.FirstOrDefault(b => b.BookId == book.BookId));
+                }
+                _unitOfWork.OrderRepository.Update(newOrder);
+                _unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId).Orders.Add(newOrder);
+                _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId));
                 await _unitOfWork.SaveAsync();
                     
                 await _unitOfWork.CommitTransactionAsync();
@@ -61,26 +76,56 @@ public class OrderService : IOrderService
 
     public async Task<bool> DeleteOrder(OrderDTO order)
     {
-        throw new NotImplementedException();
+        if (order==null || !await _unitOfWork.OrderRepository.Any(o=> o.OrderNumber == order.OrderNumber))
+        {
+            return false;
+        }
+        var delorder = _unitOfWork.OrderRepository.FirstOrDefault(o => o.OrderNumber == order.OrderNumber);
+
+        using (_unitOfWork.BeginTransactionAsync())
+        {
+            try
+            {
+               var books = _unitOfWork.BookRepository.Get(b => b.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId
+                                                              == delorder.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId);
+                foreach (var book in books)
+                {
+                    foreach (var ob in book.OrdersBook)
+                    {
+                        if (delorder.OrderId == ob.OrderId)
+                        {
+                            book.OrdersBook.Remove(ob);
+                        }
+                    }
+                    _unitOfWork.BookRepository.Update(book);
+                }
+                _unitOfWork.OrderRepository.Remove(delorder);
+                _unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId).Orders.Remove(delorder);
+                _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId));
+                await _unitOfWork.SaveAsync();
+
+                await _unitOfWork.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
+        }
+        return false;
     }
 
-    public async Task<OrderDTO> GetOrderByNumber(int id)
+    public async Task<Order> GetOrderByNumber(int number)
     {
-        throw new NotImplementedException();
+        return await _unitOfWork.OrderRepository.FirstOrDefaultAsync(o=>o.OrderNumber == number);
     }
 
-    public async Task<OrderDTO> GetOrderByUser(UserDTO user)
+    public async Task<Order> GetOrderByUser(UserDTO user)
     {
-        throw new NotImplementedException();
+        return await _unitOfWork.OrderRepository.FirstOrDefaultAsync(o => o.User.Email == user.Email || o.User.PhoneNumber == user.PhoneNumber);
     }
 
-    public async Task<IEnumerable<OrderDTO>> GetAllOrdersByUser(UserDTO user)
+    public IEnumerable<Order> GetAllOrdersByUser(UserDTO user)
     {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> EditOrder(Order order, OrderDTO orderDto)
-    {
-        throw new NotImplementedException();
+        return _unitOfWork.OrderRepository.Get(o => o.User.Email == user.Email || o.User.PhoneNumber == user.PhoneNumber);
     }
 }

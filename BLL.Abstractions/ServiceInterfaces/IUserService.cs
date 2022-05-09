@@ -10,7 +10,7 @@ namespace BLL.Abstractions.ServiceInterfaces
 {
     public interface IUserService
     {
-        Task<bool> RegisterAsync(User user);
+        Task<bool> RegisterAsync(UserDTO user);
         Task<User> SignInAsync(string username, string password);
         Task<bool> ChangeUserDataAsync(User user, UserDTO newUserData);
     }

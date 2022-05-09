@@ -11,7 +11,7 @@ public class Order : BaseEntity
     [Required]
     public int OrderNumber { get; set; }
     [Required]
-    public decimal Sum { get; set; }
+    public double Sum { get; set; }
     [Required]
     [MaxLength(30)]
     public string PhoneNumber { get; set; }

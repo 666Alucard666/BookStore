@@ -5,7 +5,6 @@ C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BookStoreUI.exe
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BookStoreUI.deps.json
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BookStoreUI.runtimeconfig.json
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BookStoreUI.dll
-C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\ref\BookStoreUI.dll
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BookStoreUI.pdb
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\obj\Debug\net6.0\BookStoreUI.csproj.AssemblyReference.cache
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\obj\Debug\net6.0\BookStoreUI.GeneratedMSBuildEditorConfig.editorconfig
@@ -63,3 +62,15 @@ C:\Users\DVO\source\repos\BookStore\BookStoreUI\obj\Debug\net6.0\BookStoreUI.csp
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Humanizer.dll
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\FluentResults.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BLL.Abstractions.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BLL.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\DAL.Abstractions.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BLL.Abstractions.pdb
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\BLL.pdb
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\DAL.Abstractions.pdb
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\obj\Debug\net6.0\refint\BookStoreUI.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

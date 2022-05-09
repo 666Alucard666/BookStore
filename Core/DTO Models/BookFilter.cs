@@ -12,8 +12,8 @@ namespace Core.DTO_Models
 
         public string Genre { get; set; }
 
-        public decimal StartPrice { get; set; }
+        public double StartPrice { get; set; }
 
-        public decimal EndPrice { get; set; }
+        public double EndPrice { get; set; }
     }
 }

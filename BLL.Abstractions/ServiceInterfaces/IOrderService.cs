@@ -12,9 +12,8 @@ namespace BLL.Abstractions.ServiceInterfaces
     {
         Task<bool> MakeOrder(OrderDTO order);
         Task<bool> DeleteOrder(OrderDTO order);
-        Task<OrderDTO> GetOrderByNumber(int id);
-        Task<OrderDTO> GetOrderByUser(UserDTO user);
-        Task<IEnumerable<OrderDTO>> GetAllOrdersByUser(UserDTO user);
-        Task<bool> EditOrder(Order order,OrderDTO orderDto);
+        Task<Order> GetOrderByNumber(int number);
+        Task<Order> GetOrderByUser(UserDTO user);
+        IEnumerable<Order> GetAllOrdersByUser(UserDTO user);
     }
 }

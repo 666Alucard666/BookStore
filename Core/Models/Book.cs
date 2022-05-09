@@ -26,7 +26,7 @@ namespace Core.Models
         public string Author { get; set; }
 
         [Required]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
         [Required]
         [MaxLength(30)]

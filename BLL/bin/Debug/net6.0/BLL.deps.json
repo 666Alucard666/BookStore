@@ -7,14 +7,54 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "BLL/1.0.0": {
+        "dependencies": {
+          "BLL.Abstractions": "1.0.0",
+          "DAL.Abstractions": "1.0.0"
+        },
         "runtime": {
           "BLL.dll": {}
+        }
+      },
+      "BLL.Abstractions/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "runtime": {
+          "BLL.Abstractions.dll": {}
+        }
+      },
+      "Core/1.0.0": {
+        "runtime": {
+          "Core.dll": {}
+        }
+      },
+      "DAL.Abstractions/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "runtime": {
+          "DAL.Abstractions.dll": {}
         }
       }
     }
   },
   "libraries": {
     "BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BLL.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAL.Abstractions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

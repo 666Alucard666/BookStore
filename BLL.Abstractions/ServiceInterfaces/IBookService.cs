@@ -13,6 +13,7 @@ namespace BLL.Abstractions.ServiceInterfaces
         Task<bool> CreateBook(BookDTO book);
         Task<bool> DeleteBook(BookDTO book);
         IEnumerable<BookDTO> GetAllBooksByFilter(BookFilter filter);
-        Task<bool> EditPrice(BookDTO book,decimal price);
+        Task<bool> EditPrice(int id,double price);
+        Task<BookDTO> GetBook(string name);
     }
 }

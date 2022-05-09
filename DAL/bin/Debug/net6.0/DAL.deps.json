@@ -9,6 +9,7 @@
       "DAL/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
+          "DAL.Abstractions": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.2",
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.2",
           "Microsoft.EntityFrameworkCore.Design": "6.0.2",
@@ -491,6 +492,14 @@
         "runtime": {
           "Core.dll": {}
         }
+      },
+      "DAL.Abstractions/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "runtime": {
+          "DAL.Abstractions.dll": {}
+        }
       }
     }
   },
@@ -802,6 +811,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAL.Abstractions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

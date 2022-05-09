@@ -17,7 +17,9 @@ namespace Core.Models
         [Required]
         [MaxLength(150)]
         public string Email { get; set; }
-        
+
+        [Required]
+        public string PhoneNumber { get; set; }
         [Required]
         [MaxLength(30)]
         public string Name { get; set; }
@@ -28,7 +30,7 @@ namespace Core.Models
         
         [Required]
         [MaxLength(30)]
-        public string Login { get; set; }
+        public string Username { get; set; }
 
         [Required]
         [MaxLength(30)]
