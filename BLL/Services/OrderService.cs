@@ -32,9 +32,8 @@ public class OrderService : IOrderService
         {
             Address = order.Address,
             Date = order.Date,
-            OrderNumber = Convert.ToInt32(numb.Reverse().ToString()),
+            OrderNumber = 1,
             PhoneNumber = order.PhoneNumber,
-            User = order.User,
             UserId = order.User.UserId,
             Sum = sum,
             OrdersBook = new List<OrdersBooks>(),
@@ -45,22 +44,16 @@ public class OrderService : IOrderService
         {
             try
             { 
-                _unitOfWork.OrderRepository.Create(newOrder);
                 foreach (var book in order.Books)
                 {
                     newOrder.OrdersBook.Add(new OrdersBooks
                     {
                         BookId = book.BookId,
                         OrderId = newOrder.OrderId,
-                        Order = newOrder,
-                        Book = book
                     });
-                    _unitOfWork.BookRepository.FirstOrDefault(b=>b.BookId == book.BookId).OrdersBook = newOrder.OrdersBook;
-                    _unitOfWork.BookRepository.Update(_unitOfWork.BookRepository.FirstOrDefault(b => b.BookId == book.BookId));
                 }
-                _unitOfWork.OrderRepository.Update(newOrder);
-                _unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId).Orders.Add(newOrder);
-                _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId));
+                
+                _unitOfWork.OrderRepository.Create(newOrder);
                 await _unitOfWork.SaveAsync();
                     
                 await _unitOfWork.CommitTransactionAsync();

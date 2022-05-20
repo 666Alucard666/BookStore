@@ -95,4 +95,9 @@ public class UserService : IUserService
 
         return foundUser;
     }
+
+    public Task<bool> ChangeUserDataAsync(User user, UserDTO newUserData)
+    {
+        throw new NotImplementedException();
+    }
 }

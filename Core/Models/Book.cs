@@ -33,6 +33,6 @@ namespace Core.Models
         public string Publishing { get; set; }
         [Required]
         public int AmountOnStore { get; set; }
-        public ICollection<OrdersBooks> OrdersBook { get; set; }
+        public virtual ICollection<OrdersBooks> OrdersBook { get; set; }
     }
 }

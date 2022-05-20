@@ -35,6 +35,6 @@ namespace Core.Models
         [Required]
         [MaxLength(30)]
         public string Password { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

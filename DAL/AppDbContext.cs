@@ -20,5 +20,19 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<OrdersBooks>().HasKey(sc => new { sc.OrderId, sc.BookId });
+        modelBuilder
+            .Entity<OrdersBooks>().HasOne(sc => sc.Book)
+            .WithMany(x=>x.OrdersBook)
+            .HasForeignKey(x=>x.BookId);
+        
+        modelBuilder
+            .Entity<OrdersBooks>().HasOne(sc => sc.Order)
+            .WithMany(x=>x.OrdersBook)
+            .HasForeignKey(x=>x.OrderId);
+        
+        modelBuilder
+            .Entity<Order>().HasOne(sc => sc.User)
+            .WithMany(x=>x.Orders)
+            .HasForeignKey(x=>x.UserId);
     }
 }

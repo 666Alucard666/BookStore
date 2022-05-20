@@ -40,17 +40,12 @@ namespace BookStoreUI
                     builder.AllowAnyHeader();
                 });
             });
-            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings
-           .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
-           .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            services.AddControllers();
+            
             services.AddControllers().AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
             });
-            services.AddMvc(option => option.EnableEndpointRouting = false)
-                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
