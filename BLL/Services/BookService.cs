@@ -113,7 +113,7 @@ namespace BLL.Services
             {
                 try
                 {
-                    _unitOfWork.BookRepository.Update(needbook);
+                    await _unitOfWork.BookRepository.Update(needbook);
                     await _unitOfWork.SaveAsync();
 
                     await _unitOfWork.CommitTransactionAsync();

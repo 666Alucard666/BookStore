@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories;
 
-public class UserRepos: BaseRepository,IGenericRepos<User>, IDisposable
+public class UserRepos: IGenericRepos<User>, IDisposable
 {
     private AppDbContext context;
     public UserRepos(AppDbContext context)
@@ -59,10 +59,10 @@ public class UserRepos: BaseRepository,IGenericRepos<User>, IDisposable
     {
         return context.Users.Any();
     }
-    public async void Update(User item)
+    public async Task Update(User item)
     {
         context.Entry(item).State = EntityState.Modified;
-        this.Save();
+        await this.Save();
     }
 
     public void RemoveById(int id)
@@ -75,7 +75,7 @@ public class UserRepos: BaseRepository,IGenericRepos<User>, IDisposable
         context.Users.Remove(item);
     }
 
-    public async void Save()
+    public async Task Save()
     {
         await context.SaveChangesAsync();
     }

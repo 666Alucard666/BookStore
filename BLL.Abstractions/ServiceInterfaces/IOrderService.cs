@@ -13,7 +13,6 @@ namespace BLL.Abstractions.ServiceInterfaces
         Task<bool> MakeOrder(OrderDTO order);
         Task<bool> DeleteOrder(OrderDTO order);
         Task<Order> GetOrderByNumber(int number);
-        Task<Order> GetOrderByUser(UserDTO user);
         IEnumerable<Order> GetAllOrdersByUser(UserDTO user);
     }
 }

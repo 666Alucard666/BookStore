@@ -11,9 +11,9 @@
     "BookStoreUI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "launchUrl": "api",
-      "applicationUrl": "https://localhost:7243;http://localhost:5243",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7243",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

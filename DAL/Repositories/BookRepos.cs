@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories;
 
-public class BookRepos : BaseRepository,IGenericRepos<Book>, IDisposable
+public class BookRepos : IGenericRepos<Book>, IDisposable
 {
     private AppDbContext context;
     public BookRepos(AppDbContext context)
@@ -61,10 +61,10 @@ public class BookRepos : BaseRepository,IGenericRepos<Book>, IDisposable
     {
         return context.Books.Any();
     }
-    public void Update(Book item)
+    public async Task Update(Book item)
     {
         context.Entry(item).State = EntityState.Modified;
-        this.Save();
+        await Save();
     }
 
     public void RemoveById(int id)
@@ -76,9 +76,9 @@ public class BookRepos : BaseRepository,IGenericRepos<Book>, IDisposable
     {
         context.Books.Remove(item);
     }
-    public  void Save()
+    public async Task Save()
     { 
-        context.SaveChangesAsync();
+        await context.SaveChangesAsync();
     }
 
     protected virtual void Dispose(bool disposing)

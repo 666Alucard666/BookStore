@@ -11,28 +11,25 @@ namespace Core.Models
     public class Book : BaseEntity
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int BookId { get; set; }
         [Required]
-        [MaxLength(150)]
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public string Genre { get; set; }
 
         [Required]
-        [MaxLength(60)]
         public string Author { get; set; }
 
         [Required]
         public double Price { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public string Publishing { get; set; }
         [Required]
         public int AmountOnStore { get; set; }
+        [Required]
         public ICollection<OrdersBooks> OrdersBook { get; set; }
     }
 }

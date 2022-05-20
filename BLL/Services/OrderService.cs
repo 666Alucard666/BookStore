@@ -25,44 +25,42 @@ public class OrderService : IOrderService
         double sum = 0;
         foreach (var book in order.Books)
         {
-            numb += book.BookId;
-            sum += book.Price;
+            numb += book.Book.BookId;
+            sum += book.Book.Price;
         }
         var newOrder = new Order()
         {
             Address = order.Address,
             Date = order.Date,
-            OrderNumber = Convert.ToInt32(numb.Reverse().ToString()),
+            OrderNumber = Convert.ToInt32(new string(numb.Reverse().ToArray())),
             PhoneNumber = order.PhoneNumber,
             User = order.User,
             UserId = order.User.UserId,
             Sum = sum,
             OrdersBook = new List<OrdersBooks>(),
         };
-       
-        
-        using (_unitOfWork.BeginTransactionAsync())
+
+
+        using ( _unitOfWork.BeginTransactionAsync())
         {
             try
-            { 
+            {
+                //foreach (var book in order.Books)
+                //{
+                //    newOrder.OrdersBook.Add(new OrdersBooks
+                //    {
+                //        BookId = book.Book.BookId,
+                //        Count = book.Count
+                //    });
+                //}
+                
                 _unitOfWork.OrderRepository.Create(newOrder);
-                foreach (var book in order.Books)
-                {
-                    newOrder.OrdersBook.Add(new OrdersBooks
-                    {
-                        BookId = book.BookId,
-                        OrderId = newOrder.OrderId,
-                        Order = newOrder,
-                        Book = book
-                    });
-                    _unitOfWork.BookRepository.FirstOrDefault(b=>b.BookId == book.BookId).OrdersBook = newOrder.OrdersBook;
-                    _unitOfWork.BookRepository.Update(_unitOfWork.BookRepository.FirstOrDefault(b => b.BookId == book.BookId));
-                }
-                _unitOfWork.OrderRepository.Update(newOrder);
-                _unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId).Orders.Add(newOrder);
-                _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId));
+
+                // await _unitOfWork.OrderRepository.Update(newOrder);
+                //_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId).Orders.Add(newOrder);
+                //await _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId));
                 await _unitOfWork.SaveAsync();
-                    
+
                 await _unitOfWork.CommitTransactionAsync();
             }
             catch 
@@ -70,7 +68,6 @@ public class OrderService : IOrderService
                 await _unitOfWork.RollbackTransactionAsync();
             }
         }
-
         return true;
     }
 
@@ -97,11 +94,11 @@ public class OrderService : IOrderService
                             book.OrdersBook.Remove(ob);
                         }
                     }
-                    _unitOfWork.BookRepository.Update(book);
+                   await _unitOfWork.BookRepository.Update(book);
                 }
                 _unitOfWork.OrderRepository.Remove(delorder);
                 _unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId).Orders.Remove(delorder);
-                _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId));
+                await _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId));
                 await _unitOfWork.SaveAsync();
 
                 await _unitOfWork.CommitTransactionAsync();
@@ -118,12 +115,6 @@ public class OrderService : IOrderService
     {
         return await _unitOfWork.OrderRepository.FirstOrDefaultAsync(o=>o.OrderNumber == number);
     }
-
-    public async Task<Order> GetOrderByUser(UserDTO user)
-    {
-        return await _unitOfWork.OrderRepository.FirstOrDefaultAsync(o => o.User.Email == user.Email || o.User.PhoneNumber == user.PhoneNumber);
-    }
-
     public IEnumerable<Order> GetAllOrdersByUser(UserDTO user)
     {
         return _unitOfWork.OrderRepository.Get(o => o.User.Email == user.Email || o.User.PhoneNumber == user.PhoneNumber);

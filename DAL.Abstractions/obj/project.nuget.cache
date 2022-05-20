@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NgT+vBsfdT2FO9IEA/N2CwrzqaqCmXnoGDL659mpw4bIkgRPXS3SRvC0L5JD5a8CAkRvVcS0IUUIUInYQdhBgQ==",
+  "dgSpecHash": "/x5Az322acLJ6BNzTCI9aJLod6MHUJ4zluvxGTjPXP9CRvYa57PRCPs1riBTi29YrR2oRgf20bu9+J4Kq8fyAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\DVO\\source\\repos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\DVO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -4,9 +4,11 @@ using Core.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using FluentResults;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStoreUI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/book")]
     [Produces("application/json")]
@@ -48,7 +50,7 @@ namespace BookStoreUI.Controllers
             return Ok();
         }
 
-        [HttpPost("DeleteBook")]
+        [HttpDelete("DeleteBook")]
         public async Task<ActionResult> Delete(BookDTO book)
         {
             if (book == null)
@@ -64,7 +66,7 @@ namespace BookStoreUI.Controllers
             return Ok();
         }
         [HttpGet("GetBooksByFilter")]
-        public ActionResult<BookDTO> GetBooksByFilter(BookFilter filter)
+        public ActionResult<BookDTO> GetBooksByFilter([FromBody]BookFilter filter)
         {
             var b =  _bookService.GetAllBooksByFilter(filter).ToList();
             return Ok(b);

@@ -15,5 +15,6 @@ public class BookDTO
     public double Price { get; set; }
 
     public string Publishing { get; set; }
+
     public int AmountOnStore { get; set; }
 }

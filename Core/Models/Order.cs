@@ -13,17 +13,15 @@ public class Order : BaseEntity
     [Required]
     public double Sum { get; set; }
     [Required]
-    [MaxLength(30)]
     public string PhoneNumber { get; set; }
     [Required]
-    [MaxLength(60)]
     public string Address { get; set; }
     [Required]
     public DateTime Date { get; set; }
-    
+    [Required]
     public int UserId { get; set; }
-    
-    public User User { get; set; }
-    
+
+    public User User { get; set; } 
+
     public ICollection<OrdersBooks> OrdersBook { get; set; }
 }

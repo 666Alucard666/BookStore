@@ -2,7 +2,11 @@
 using Core.DTO_Models;
 using Core.Models;
 using FluentResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace BookStoreUI.Controllers
 {
@@ -12,14 +16,16 @@ namespace BookStoreUI.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly IConfiguration _configuration;
+        public UserController(IUserService userService, IConfiguration configuration)
         {
             _userService = userService;
+            _configuration = configuration;
         }
 
         [HttpPost]
         [Route("Login")]
-        public async Task<ActionResult<User>> SignIn([FromBody] LoginDTO loginPswd)
+        public async Task<ActionResult<UserAfterLogin>> SignIn([FromBody] LoginDTO loginPswd)
         {
             if (loginPswd == null
                 || string.IsNullOrWhiteSpace(loginPswd.Login)
@@ -34,13 +40,37 @@ namespace BookStoreUI.Controllers
             {
                 return BadRequest("User was not found");
             }
+            var res = new UserAfterLogin
+            {
+                User = user,
+                Token = GenerateJwtToken(loginPswd),
+            };
+            return Ok(res);
+        }
 
-            return Ok(user);
+        private string GenerateJwtToken(LoginDTO login)
+        {
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Email, login.Login),
+            };
+
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSetings:Token").Value));
+
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                signingCredentials: cred,
+                expires: DateTime.UtcNow.AddDays(1)
+                );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
         [HttpPost]
         [Route("Registration")]
-        public async Task<ActionResult<User>> Register([FromBody] UserDTO user)
+        public async Task<ActionResult<bool>> Register([FromBody] UserDTO user)
         {
             if (user == null
                 || string.IsNullOrWhiteSpace(user.UserName)
@@ -50,12 +80,12 @@ namespace BookStoreUI.Controllers
             {
                 return BadRequest("User values can't be empty");
             }
-            if ( await _userService.RegisterAsync(user))
+            if (! await _userService.RegisterAsync(user))
             {
-                return BadRequest();
+                return BadRequest("Cannot register u(");
             }
 
-            return Ok(user); // return jwt token
+            return Ok(true); // return jwt token
         }
     }
 }

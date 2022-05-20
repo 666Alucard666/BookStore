@@ -15,26 +15,22 @@ namespace Core.Models
         public int UserId { get; set; }
         
         [Required]
-        [MaxLength(150)]
         public string Email { get; set; }
 
         [Required]
         public string PhoneNumber { get; set; }
         [Required]
-        [MaxLength(30)]
         public string Name { get; set; }
         
         [Required]
-        [MaxLength(30)]
         public string Surname { get; set; }
         
         [Required]
-        [MaxLength(30)]
         public string Username { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public string Password { get; set; }
+        [Required]
         public ICollection<Order> Orders { get; set; }
     }
 }

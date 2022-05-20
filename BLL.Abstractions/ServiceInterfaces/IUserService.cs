@@ -12,6 +12,5 @@ namespace BLL.Abstractions.ServiceInterfaces
     {
         Task<bool> RegisterAsync(UserDTO user);
         Task<User> SignInAsync(string username, string password);
-        Task<bool> ChangeUserDataAsync(User user, UserDTO newUserData);
     }
 }

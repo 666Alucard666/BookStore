@@ -9,5 +9,5 @@ public class OrderDTO
     public DateTime Date { get; set; }
     public User User { get; set; }
     public int OrderNumber { get; set; }
-    public ICollection<Book> Books {get; set; }
+    public ICollection<BookBasket> Books {get; set; }
 }

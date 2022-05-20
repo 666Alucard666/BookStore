@@ -35,7 +35,7 @@ public class UserService : IUserService
             return false;
         }
 
-        if (!await _unitOfWork.UserRepository.Any(us=> us.Email == user.Email ||
+        if (await _unitOfWork.UserRepository.Any(us=> us.Email == user.Email ||
             user.UserName == us.Username || us.PhoneNumber == user.PhoneNumber))
         {
             return false;
@@ -78,7 +78,7 @@ public class UserService : IUserService
         {
             throw new ValidationException("Incorrect password", "Password");
         }
-        //TODO: Is phone number or email 
+
         if (!await _unitOfWork.UserRepository.Any())
         {
             return null;

@@ -74,3 +74,15 @@ C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.AspNe
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\obj\Debug\net6.0\BookStoreUI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\System.Web.Http.WebHost.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\Swashbuckle.Core.dll
+C:\Users\DVO\source\repos\BookStore\BookStoreUI\bin\Debug\net6.0\WebActivatorEx.dll
