@@ -42,7 +42,7 @@ namespace DAL
         public async Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
         {
             await _transaction.RollbackAsync(cancellationToken);
-            await _context.DisposeAsync();
+            //await _context.DisposeAsync();
         }
 
         public async Task<int> SaveAsync(CancellationToken cancellationToken = default)

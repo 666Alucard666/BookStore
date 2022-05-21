@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TZ3Lvmsww2NnabuoYHFAmMQg1jRcAl1+xfebzhcqk0xxSHIoMR3kRaF9UKrjhgEU9u6jOegiBVxDHnmq+3xKJw==",
+  "dgSpecHash": "0oL8V1j6cQXQ9lvU8G99Sw8m2avUCvxpK3RrUU1x0W7ouI7InsNK/f9gZXiZVkRY6xvi+VzSdakMWTjfLKg0MA==",
   "success": true,
   "projectFilePath": "C:\\Users\\DVO\\source\\repos\\BookStore\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
@@ -31,8 +31,10 @@
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

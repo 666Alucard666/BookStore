@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories;
 
-public class OrderRepos : BaseRepository, IGenericRepos<Order>, IDisposable
+public class OrderRepos :  IGenericRepos<Order>, IDisposable
 {
     private AppDbContext context;
     public OrderRepos(AppDbContext context)
@@ -60,10 +60,10 @@ public class OrderRepos : BaseRepository, IGenericRepos<Order>, IDisposable
     {
         return context.Orders.Any();
     }
-    public void Update(Order item)
+    public async Task Update(Order item)
     {
         context.Entry(item).State = EntityState.Modified;
-        this.Save();
+        await this.Save();
     }
 
     public void RemoveById(int id)
@@ -75,9 +75,9 @@ public class OrderRepos : BaseRepository, IGenericRepos<Order>, IDisposable
     {
         context.Orders.Remove(item);
     }
-    public  void Save()
+    public async Task Save()
     { 
-        context.SaveChangesAsync();
+       await context.SaveChangesAsync();
     }
     protected virtual void Dispose(bool disposing)
     {

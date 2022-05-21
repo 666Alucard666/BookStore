@@ -20,9 +20,9 @@ namespace DAL.Abstractions.Interfaces
         IEnumerable<TEntity> Get(Func<TEntity, bool> predicate);
         Task<bool> Any(Expression<Func<TEntity, bool>> predicate);
         Task<bool> Any();
-        void Update(TEntity item);
+        Task Update(TEntity item);
         void RemoveById(int id);
         void Remove(TEntity item);
-        void Save();
+        Task Save();
     }
 }

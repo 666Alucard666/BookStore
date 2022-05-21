@@ -8,4 +8,6 @@ public class OrderDTO
     public string Address { get; set; }
     public DateTime Date { get; set; }
     public User User { get; set; }
+    public int OrderNumber { get; set; }
+    public ICollection<BookBasket> Books {get; set; }
 }

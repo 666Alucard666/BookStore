@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CUozDM3DD2QFstgU033ckJZNCOq4+qxv3sop+GCDDKrrvW0I9RB5m1ISdvg0jvFZfrp9NSvGcBc3C7UD2BbNCQ==",
+  "dgSpecHash": "BJFZzQL+c1leNgXCJtpIoAeJoMnu7ZE7N8/THWC3FpAzeUKyLadvS8dE3nyd8Eoe3Zk2oMrAQMtod1lbsRf+4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\DVO\\source\\repos\\BookStore\\BLL\\BLL.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\DVO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512"
+  ],
   "logs": []
 }
