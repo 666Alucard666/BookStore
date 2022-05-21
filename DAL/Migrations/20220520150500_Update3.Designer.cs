@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220520091240_FixedIdentity")]
-    partial class FixedIdentity
+    [Migration("20220520150500_Update3")]
+    partial class Update3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

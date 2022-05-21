@@ -20,8 +20,8 @@ public class Order : BaseEntity
     public DateTime Date { get; set; }
     [Required]
     public int UserId { get; set; }
-
-    public User User { get; set; } 
-
-    public ICollection<OrdersBooks> OrdersBook { get; set; }
+    
+    public virtual User User { get; set; }
+    
+    public virtual ICollection<OrdersBooks> OrdersBook { get; set; }
 }

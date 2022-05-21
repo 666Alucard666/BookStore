@@ -76,10 +76,7 @@ namespace BookStoreUI
                     builder.AllowAnyHeader();
                 });
             });
-            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings
-           .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
-           .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            services.AddControllers();
+            
             services.AddControllers().AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;

@@ -37,7 +37,7 @@ namespace BookStoreUI.Controllers
         }
 
 
-        [HttpPost("EditBookPrice")]
+        [HttpPut("EditBookPrice")]
         public async Task<ActionResult> EditPrice([FromBody]EdPrice price)
         {
             var b = await _bookService.EditPrice(price.Id, price.Price);
@@ -72,14 +72,14 @@ namespace BookStoreUI.Controllers
             return Ok(b);
         }
         [HttpGet("GetBook")]
-        public async Task< Result<BookDTO>> GetBook(string name)
+        public async Task<ActionResult<BookDTO>> GetBook(string name)
         {
             var b = await _bookService.GetBook(name);
             if (b==null)
             {
-                return Result.Fail("Book not found");
+                return BadRequest("Book not found");
             }
-            return Result.Ok(b);
+            return Ok(b);
         }
     }
 }

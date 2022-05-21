@@ -11,7 +11,7 @@ namespace Core.Models
     public class Book : BaseEntity
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BookId { get; set; }
         [Required]
         public string Name { get; set; }
@@ -29,7 +29,6 @@ namespace Core.Models
         public string Publishing { get; set; }
         [Required]
         public int AmountOnStore { get; set; }
-        [Required]
-        public ICollection<OrdersBooks> OrdersBook { get; set; }
+        public virtual ICollection<OrdersBooks> OrdersBook { get; set; }
     }
 }

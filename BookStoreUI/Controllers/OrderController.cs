@@ -40,7 +40,7 @@ namespace BookStoreUI.Controllers
         }
 
         [HttpDelete("DeleteOrder")]
-        public async Task<ActionResult> Delete(OrderDTO order)
+        public async Task<ActionResult> Delete(DeleteOrderRequest order)
         {
             if (order == null)
             {
@@ -68,15 +68,16 @@ namespace BookStoreUI.Controllers
             }
             return Ok(b);
         }
+
         [HttpGet("GetOrdersByUser")]
-        public ActionResult<List<Order>> GetOrdersByUser(UserDTO user)
+        public ActionResult<List<Order>> GetOrdersByUserId([FromQuery]int userId)
         {
-            if (user == null)
+            if (userId == 0)
             {
                 return BadRequest("Wrong user");
             }
 
-            var b = _orderService.GetAllOrdersByUser(user).ToList();
+            var b = _orderService.GetAllOrdersByUser(userId).ToList();
             if (b == null || b.Count == 0)
             {
                 return BadRequest("None orders for this user");

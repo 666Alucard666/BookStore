@@ -23,6 +23,7 @@ public class OrderService : IOrderService
 
         var numb = string.Empty;
         double sum = 0;
+        var nu = new Random();
         foreach (var book in order.Books)
         {
             numb += book.Book.BookId;
@@ -32,9 +33,8 @@ public class OrderService : IOrderService
         {
             Address = order.Address,
             Date = order.Date,
-            OrderNumber = Convert.ToInt32(new string(numb.Reverse().ToArray())),
+            OrderNumber = nu.Next(),
             PhoneNumber = order.PhoneNumber,
-            User = order.User,
             UserId = order.User.UserId,
             Sum = sum,
             OrdersBook = new List<OrdersBooks>(),
@@ -44,21 +44,18 @@ public class OrderService : IOrderService
         using ( _unitOfWork.BeginTransactionAsync())
         {
             try
-            {
-                //foreach (var book in order.Books)
-                //{
-                //    newOrder.OrdersBook.Add(new OrdersBooks
-                //    {
-                //        BookId = book.Book.BookId,
-                //        Count = book.Count
-                //    });
-                //}
+            { 
+                foreach (var book in order.Books)
+                {
+                    newOrder.OrdersBook.Add(new OrdersBooks
+                    {
+                        BookId = book.Book.BookId,
+                        OrderId = newOrder.OrderId,
+                        Count = book.Count,
+                    });
+                }
                 
                 _unitOfWork.OrderRepository.Create(newOrder);
-
-                // await _unitOfWork.OrderRepository.Update(newOrder);
-                //_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId).Orders.Add(newOrder);
-                //await _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == newOrder.UserId));
                 await _unitOfWork.SaveAsync();
 
                 await _unitOfWork.CommitTransactionAsync();
@@ -71,34 +68,37 @@ public class OrderService : IOrderService
         return true;
     }
 
-    public async Task<bool> DeleteOrder(OrderDTO order)
+    public async Task<bool> DeleteOrder(DeleteOrderRequest order)
     {
         if (order==null || !await _unitOfWork.OrderRepository.Any(o=> o.OrderNumber == order.OrderNumber))
         {
             return false;
         }
-        var delorder = _unitOfWork.OrderRepository.FirstOrDefault(o => o.OrderNumber == order.OrderNumber);
-
+        var delorder = _unitOfWork.OrderRepository.FirstOrDefault(o => o.OrderNumber == order.OrderNumber && o.OrderId == order.OrderId);
+        if (delorder == null)
+        {
+            return false;
+        }
         using (_unitOfWork.BeginTransactionAsync())
         {
             try
             {
-               var books = _unitOfWork.BookRepository.Get(b => b.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId
-                                                              == delorder.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId);
-                foreach (var book in books)
-                {
-                    foreach (var ob in book.OrdersBook)
-                    {
-                        if (delorder.OrderId == ob.OrderId)
-                        {
-                            book.OrdersBook.Remove(ob);
-                        }
-                    }
-                   await _unitOfWork.BookRepository.Update(book);
-                }
+               //var books = _unitOfWork.BookRepository.Get(b => b.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId
+               //                                               == delorder.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId);
+               // foreach (var book in books)
+               // {
+               //     foreach (var ob in book.OrdersBook)
+               //     {
+               //         if (delorder.OrderId == ob.OrderId)
+               //         {
+               //             book.OrdersBook.Remove(ob);
+               //         }
+               //     }
+               //    await _unitOfWork.BookRepository.Update(book);
+               // }
                 _unitOfWork.OrderRepository.Remove(delorder);
-                _unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId).Orders.Remove(delorder);
-                await _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId));
+                //_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId).Orders.Remove(delorder);
+                //await _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId));
                 await _unitOfWork.SaveAsync();
 
                 await _unitOfWork.CommitTransactionAsync();
@@ -108,15 +108,15 @@ public class OrderService : IOrderService
                 await _unitOfWork.RollbackTransactionAsync();
             }
         }
-        return false;
+        return true;
     }
 
     public async Task<Order> GetOrderByNumber(int number)
     {
         return await _unitOfWork.OrderRepository.FirstOrDefaultAsync(o=>o.OrderNumber == number);
     }
-    public IEnumerable<Order> GetAllOrdersByUser(UserDTO user)
+    public IEnumerable<Order> GetAllOrdersByUser(int userId)
     {
-        return _unitOfWork.OrderRepository.Get(o => o.User.Email == user.Email || o.User.PhoneNumber == user.PhoneNumber);
+        return _unitOfWork.OrderRepository.Get(o => o.UserId == userId);
     }
 }

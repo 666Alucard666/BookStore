@@ -1,0 +1,461 @@
+﻿++Solution 'BookStore' ‎(6 of 6 projects)
+i:{00000000-0000-0000-0000-000000000000}:BookStore.sln
+++DAL
+i:{00000000-0000-0000-0000-000000000000}:DAL
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\dal\bin\debug\net6.0\dal.dll
+++Dependencies
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:>715
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:>714
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:>712
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:>711
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:>713
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>941
+++Migrations
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\migrations\
+++20220520124142_update2.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\migrations\20220520124142_update2.cs
+++AppDbContextModelSnapshot.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\migrations\appdbcontextmodelsnapshot.cs
+++Repositories
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\repositories\
+++BaseRepository.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\repositories\baserepository.cs
+++BookRepos.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\repositories\bookrepos.cs
+++OrderRepos.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\repositories\orderrepos.cs
+++UserRepos.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\repositories\userrepos.cs
+++AppDbContext.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\appdbcontext.cs
+++UnitOfWork.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\unitofwork.cs
+++Analyzers
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:analyzers
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:analyzers
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:analyzers
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:analyzers
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:analyzers
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:analyzers
+++Frameworks
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:frameworks
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:frameworks
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:frameworks
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:frameworks
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:frameworks
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:frameworks
+++Packages
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:packages
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:packages
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:packages
+++Projects
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:projects
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:projects
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:projects
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:projects
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:projects
+++20220520124142_update2.Designer.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\migrations\20220520124142_update2.designer.cs
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.2\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.4\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++System.Text.Json.SourceGeneration
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.NETCore.App
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\microsoft.netcore.app
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\microsoft.netcore.app
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\microsoft.netcore.app
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\users\dvo\source\repos\bookstore\dal.abstractions\microsoft.netcore.app
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\users\dvo\source\repos\bookstore\bll.abstractions\microsoft.netcore.app
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\microsoft.netcore.app
+++Microsoft.EntityFrameworkCore (6.0.2)
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:>999
+++Microsoft.EntityFrameworkCore.Abstractions (6.0.2)
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:>1008
+++Microsoft.EntityFrameworkCore.Design (6.0.2)
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:>1005
+++Microsoft.EntityFrameworkCore.Relational (6.0.2)
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:>1006
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.2)
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:>1002
+++Microsoft.EntityFrameworkCore.Tools (6.0.2)
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:>1010
+++Core
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\core\bin\debug\net6.0\core.dll
+i:{00000000-0000-0000-0000-000000000000}:Core
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\users\dvo\source\repos\bookstore\core\bin\debug\net6.0\core.dll
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\users\dvo\source\repos\bookstore\core\bin\debug\net6.0\core.dll
+++DAL.Abstractions
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal.abstractions\bin\debug\net6.0\dal.abstractions.dll
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\dal.abstractions\bin\debug\net6.0\dal.abstractions.dll
+i:{00000000-0000-0000-0000-000000000000}:DAL.Abstractions
+++BLL
+i:{00000000-0000-0000-0000-000000000000}:BLL
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bll\bin\debug\net6.0\bll.dll
+++Infrastructure
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\infrastructure\
+++PasswordHasher.cs
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\infrastructure\passwordhasher.cs
+++ValidationException.cs
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\infrastructure\validationexception.cs
+++Services
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\services\
+++BookService.cs
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\services\bookservice.cs
+++OrderService.cs
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\services\orderservice.cs
+++UserService.cs
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll\services\userservice.cs
+++BLL.Abstractions
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\users\dvo\source\repos\bookstore\bll.abstractions\bin\debug\net6.0\bll.abstractions.dll
+i:{00000000-0000-0000-0000-000000000000}:BLL.Abstractions
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bll.abstractions\bin\debug\net6.0\bll.abstractions.dll
+++DTO Models
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\
+++BookDTO.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\bookdto.cs
+++BookFilter.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\bookfilter.cs
+++EdPrice.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\edprice.cs
+++EdUser.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\eduser.cs
+++LoginDTO.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\logindto.cs
+++OrderDTO.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\orderdto.cs
+++UserDTO.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\userdto.cs
+++Models
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\models\
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\models\
+++BaseEntity.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\models\baseentity.cs
+++Book.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\models\book.cs
+++Order.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\models\order.cs
+++OrdersBooks.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\models\ordersbooks.cs
+++User.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\models\user.cs
+++Interfaces
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\users\dvo\source\repos\bookstore\dal.abstractions\interfaces\
+++IGenericRepos.cs
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\users\dvo\source\repos\bookstore\dal.abstractions\interfaces\igenericrepos.cs
+++IUnitOfWork.cs
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\users\dvo\source\repos\bookstore\dal.abstractions\interfaces\iunitofwork.cs
+++ServiceInterfaces
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\users\dvo\source\repos\bookstore\bll.abstractions\serviceinterfaces\
+++IBookService.cs
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\users\dvo\source\repos\bookstore\bll.abstractions\serviceinterfaces\ibookservice.cs
+++IOrderService.cs
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\users\dvo\source\repos\bookstore\bll.abstractions\serviceinterfaces\iorderservice.cs
+++IUserService.cs
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\users\dvo\source\repos\bookstore\bll.abstractions\serviceinterfaces\iuserservice.cs
+++BookStoreUI
+i:{00000000-0000-0000-0000-000000000000}:BookStoreUI
+++Connected Services 
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>942
+++Properties
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\properties\
+++launchSettings.json
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\properties\launchsettings.json
+++wwwroot
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\
+++Controllers
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\controllers\
+++BookController.cs
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\controllers\bookcontroller.cs
+++HomeController.cs
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\controllers\homecontroller.cs
+++OrderController.cs
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\controllers\ordercontroller.cs
+++UserController.cs
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\controllers\usercontroller.cs
+++Views
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\
+++appsettings.json
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\appsettings.json
+++Program.cs
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\program.cs
+++Startup.cs
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\startup.cs
+++No service dependencies discovered
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>943
+++css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\css\
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\
+++js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\js\
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\
+++lib
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\
+++favicon.ico
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\favicon.ico
+++ErrorViewModel.cs
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\models\errorviewmodel.cs
+++Home
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\home\
+++Shared
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\shared\
+++_ViewImports.cshtml
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\_viewimports.cshtml
+++_ViewStart.cshtml
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\_viewstart.cshtml
+++appsettings.Development.json
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{e6d4193d-91c1-4552-bef1-bbf20e5c7af4}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{698e73e8-c431-4d04-8f2c-ccd465da97f1}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{873a400c-7040-479c-b5e3-336dbaf100e4}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++Microsoft.AspNetCore.App
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\microsoft.aspnetcore.app
+++FluentResults (3.5.0)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1011
+++Microsoft.AspNetCore.Mvc.NewtonsoftJson (6.0.4)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1009
+++Microsoft.EntityFrameworkCore.Design (6.0.4)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1003
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.4)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1001
+++Microsoft.EntityFrameworkCore.Tools (6.0.4)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1012
+++Newtonsoft.Json (13.0.1)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1007
+++site.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\css\site.css
+++site.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\js\site.js
+++bootstrap
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\
+++jquery
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery\
+++jquery-validation
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation\
+++jquery-validation-unobtrusive
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation-unobtrusive\
+++Index.cshtml
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\home\index.cshtml
+++Privacy.cshtml
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\home\privacy.cshtml
+++_Layout.cshtml
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\shared\_layout.cshtml
+++_ValidationScriptsPartial.cshtml
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\shared\_validationscriptspartial.cshtml
+++Error.cshtml
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\shared\error.cshtml
+++dist
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery\dist\
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation\dist\
+++LICENSE
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\license
+++LICENSE.txt
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery\license.txt
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation-unobtrusive\license.txt
+++LICENSE.md
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation\license.md
+++jquery.validate.unobtrusive.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+++_Layout.cshtml.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\views\shared\_layout.cshtml.css
+++jquery.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery\dist\jquery.js
+++additional-methods.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation\dist\additional-methods.js
+++jquery.validate.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+++jquery.validate.unobtrusive.min.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+++bootstrap.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+++bootstrap-grid.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+++bootstrap-reboot.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+++bootstrap-utilities.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+++bootstrap.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+++jquery.min.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery\dist\jquery.min.js
+++additional-methods.min.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+++jquery.validate.min.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+++bootstrap.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+++bootstrap.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+++bootstrap.rtl.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+++bootstrap-grid.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+++bootstrap-grid.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+++bootstrap-grid.rtl.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+++bootstrap-reboot.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+++bootstrap-reboot.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+++bootstrap-reboot.rtl.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+++bootstrap-utilities.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+++bootstrap-utilities.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+++bootstrap-utilities.rtl.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+++bootstrap.bundle.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+++bootstrap.esm.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+++bootstrap.js.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+++bootstrap.min.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+++jquery.min.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\jquery\dist\jquery.min.map
+++bootstrap.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+++bootstrap.rtl.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+++bootstrap.rtl.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+++bootstrap-grid.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+++bootstrap-grid.rtl.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+++bootstrap-grid.rtl.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+++bootstrap-reboot.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+++bootstrap-reboot.rtl.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+++bootstrap-reboot.rtl.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+++bootstrap-utilities.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+++bootstrap-utilities.rtl.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+++bootstrap-utilities.rtl.min.css
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+++bootstrap.bundle.js.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+++bootstrap.bundle.min.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+++bootstrap.esm.js.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+++bootstrap.esm.min.js
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+++bootstrap.min.js.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+++bootstrap.rtl.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+++bootstrap-grid.rtl.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+++bootstrap-reboot.rtl.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+++bootstrap-utilities.rtl.min.css.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+++bootstrap.bundle.min.js.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+++bootstrap.esm.min.js.map
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:c:\users\dvo\source\repos\bookstore\bookstoreui\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+++20220520091240_FixedIdentity.cs
+++20220520091240_FixedIdentity.Designer.cs
+++BookBasket.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\bookbasket.cs
+++UserAfterLogin.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\userafterlogin.cs
+++Swashbuckle.AspNetCore.Swagger (6.3.1)
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:>1055
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1057
+++Swashbuckle (5.6.0)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1056
+++Swashbuckle.AspNetCore.SwaggerGen (6.3.1)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1058
+++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.5)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1059
+++Swashbuckle.AspNetCore.SwaggerUI (6.3.1)
+i:{21f0f6a2-9b07-4789-b0f6-7fe22fd061f9}:>1060
+++OrderService.cs.BASE
+++OrderService.cs.LOCAL
+++OrderService.cs.REMOTE
+++Startup.cs.BASE
+++Startup.cs.LOCAL
+++Startup.cs.REMOTE
+++Book.cs.BASE
+++Book.cs.LOCAL
+++Book.cs.REMOTE
+++Order.cs.BASE
+++Order.cs.LOCAL
+++Order.cs.REMOTE
+++OrdersBooks.cs.BASE
+++OrdersBooks.cs.LOCAL
+++OrdersBooks.cs.REMOTE
+++User.cs.BASE
+++User.cs.LOCAL
+++User.cs.REMOTE
+++20220508183845_NewFixes.Designer.cs.BASE
+++20220520091240_FixedIdentity.Designer.cs.LOCAL
+++20220520124142_update2.Designer.cs.REMOTE
+++20220520124142_update2.cs.BASE
+++20220520124142_update2.cs.REMOTE
+++AppDbContextModelSnapshot.cs.BASE
+++AppDbContextModelSnapshot.cs.LOCAL
+++AppDbContextModelSnapshot.cs.REMOTE
+++20220520150500_Update3.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\migrations\20220520150500_update3.cs
+++20220520150500_Update3.Designer.cs
+i:{0806e9cf-b7c6-4331-b1cc-5b77d33c8d9e}:c:\users\dvo\source\repos\bookstore\dal\migrations\20220520150500_update3.designer.cs
+++DeleteOrderRequest.cs
+i:{aaafe2df-86e5-4433-95c6-5b7471942a39}:c:\users\dvo\source\repos\bookstore\core\dto models\deleteorderrequest.cs
