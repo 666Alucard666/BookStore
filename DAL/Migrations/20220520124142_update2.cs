@@ -78,7 +78,7 @@ namespace DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UsersBooks", x => new { x.OrderId, x.BookId });
+                    table.PrimaryKey("PK_OrdersBooks", x => new { x.OrderId, x.BookId });
                     table.ForeignKey(
                         name: "FK_OrdersBooks_Books_BookId",
                         column: x => x.BookId,
