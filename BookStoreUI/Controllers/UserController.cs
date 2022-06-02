@@ -1,8 +1,5 @@
 ﻿using BLL.Abstractions.ServiceInterfaces;
 using Core.DTO_Models;
-using Core.Models;
-using FluentResults;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -42,8 +39,9 @@ namespace BookStoreUI.Controllers
             }
             var res = new UserAfterLogin
             {
-                User = user,
+                UserId = user.UserId,
                 Token = GenerateJwtToken(loginPswd),
+                CancelDate = DateTime.UtcNow.AddDays(1).ToString("yyyyMMddTHH:mm:ss"),
             };
             return Ok(res);
         }
@@ -52,7 +50,8 @@ namespace BookStoreUI.Controllers
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, login.Login),
+                new Claim(ClaimTypes.Name, login.Login),
+                new Claim(ClaimTypes.SerialNumber, new Guid().ToString()),
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSetings:Token").Value));

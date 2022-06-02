@@ -32,9 +32,11 @@ public class OrderRepos :  IGenericRepos<Order>, IDisposable
         return  context.Orders.FirstOrDefaultAsync();
     }
 
-    public Task<Order> FirstOrDefaultAsync(Expression<Func<Order, bool>> predicate)
+    public async Task<Order> FirstOrDefaultAsync(Expression<Func<Order, bool>> predicate)
     {
-        return context.Orders.FirstOrDefaultAsync(predicate);
+        var order = await context.Orders.FirstOrDefaultAsync(predicate);
+        order.OrdersBook = context.OrdersBooks.Where(ob=>ob.OrderId == order.OrderId).ToList();
+        return order;
     }
 
     public Order FindById(int id)
