@@ -17,4 +17,8 @@ public class BookDTO
     public string Publishing { get; set; }
 
     public int AmountOnStore { get; set; }
+
+    public string Image { get; set; }
+
+    public DateTime Created { get; set; }
 }

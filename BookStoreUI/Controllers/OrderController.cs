@@ -19,7 +19,7 @@ namespace BookStoreUI.Controllers
         }
 
         [HttpPost("CreateOrder")]
-        public async Task<ActionResult> Create(OrderDTO order)
+        public async Task<ActionResult> Create([FromBody]OrderDTO order)
         {
             if (order == null)
             {
@@ -36,7 +36,7 @@ namespace BookStoreUI.Controllers
                 return BadRequest("Order cannot be created!");
             }
 
-            return Ok();
+            return Ok("Order was created!");
         }
 
         [HttpDelete("DeleteOrder")]
@@ -55,13 +55,14 @@ namespace BookStoreUI.Controllers
             return Ok();
         }
         [HttpGet("GetOrderByNumber")]
-        public ActionResult<Order> GetOrderByNumber(int orderNumber)
+        public async Task<ActionResult<Order>> GetOrderByNumber(int orderNumber)
         {
+            var h = Request.Headers;
             if (orderNumber == 0)
             {
                 return BadRequest("Wrong orderNumber");
             }
-            var b = _orderService.GetOrderByNumber(orderNumber);
+            var b = await _orderService.GetOrderByNumber(orderNumber);
             if (b == null)
             {
                 return BadRequest("None orders with this number");

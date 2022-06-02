@@ -49,7 +49,18 @@ namespace BookStoreUI.Controllers
 
             return Ok();
         }
+        [HttpPut("EditBookImage")]
+        public async Task<ActionResult> EditImage([FromBody] EdPrice price)
+        {
+            var b = await _bookService.EditPrice(price.Id, price.Price);
 
+            if (!b)
+            {
+                return BadRequest("Price cannot be changed!");
+            }
+
+            return Ok();
+        }
         [HttpDelete("DeleteBook")]
         public async Task<ActionResult> Delete(BookDTO book)
         {
@@ -65,20 +76,28 @@ namespace BookStoreUI.Controllers
 
             return Ok();
         }
+        [AllowAnonymous]
         [HttpGet("GetBooksByFilter")]
-        public ActionResult<BookDTO> GetBooksByFilter([FromBody]BookFilter filter)
+        public ActionResult<BookDTO> GetBooksByFilter([FromQuery]BookFilter filter)
         {
             var b =  _bookService.GetAllBooksByFilter(filter).ToList();
             return Ok(b);
         }
         [HttpGet("GetBook")]
-        public async Task<ActionResult<BookDTO>> GetBook(string name)
+        public async Task<ActionResult<BookDTO>> GetBook(int id)
         {
-            var b = await _bookService.GetBook(name);
+            var b = await _bookService.GetBook(id);
             if (b==null)
             {
                 return BadRequest("Book not found");
             }
+            return Ok(b);
+        }
+        [AllowAnonymous]
+        [HttpGet("GetBooks")]
+        public ActionResult<BookDTO> GetAllBooks()
+        {
+            var b = _bookService.GetAllBooks().ToList();
             return Ok(b);
         }
     }

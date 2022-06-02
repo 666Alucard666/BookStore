@@ -20,23 +20,16 @@ public class OrderService : IOrderService
         {
             return false;
         }
-
-        var numb = string.Empty;
-        double sum = 0;
         var nu = new Random();
-        foreach (var book in order.Books)
-        {
-            numb += book.Book.BookId;
-            sum += book.Book.Price;
-        }
         var newOrder = new Order()
         {
-            Address = order.Address,
+            Adress = order.Adress,
             Date = order.Date,
             OrderNumber = nu.Next(),
             PhoneNumber = order.PhoneNumber,
-            UserId = order.User.UserId,
-            Sum = sum,
+            UserId = order.UserId,
+            Sum = order.Sum,
+            Recipient = order.Recipient,
             OrdersBook = new List<OrdersBooks>(),
         };
 
@@ -49,7 +42,7 @@ public class OrderService : IOrderService
                 {
                     newOrder.OrdersBook.Add(new OrdersBooks
                     {
-                        BookId = book.Book.BookId,
+                        BookId = book.Book.Id,
                         OrderId = newOrder.OrderId,
                         Count = book.Count,
                     });
@@ -83,22 +76,7 @@ public class OrderService : IOrderService
         {
             try
             {
-               //var books = _unitOfWork.BookRepository.Get(b => b.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId
-               //                                               == delorder.OrdersBook.FirstOrDefault(ob => ob.OrderId == delorder.OrderId).BookId);
-               // foreach (var book in books)
-               // {
-               //     foreach (var ob in book.OrdersBook)
-               //     {
-               //         if (delorder.OrderId == ob.OrderId)
-               //         {
-               //             book.OrdersBook.Remove(ob);
-               //         }
-               //     }
-               //    await _unitOfWork.BookRepository.Update(book);
-               // }
                 _unitOfWork.OrderRepository.Remove(delorder);
-                //_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId).Orders.Remove(delorder);
-                //await _unitOfWork.UserRepository.Update(_unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == delorder.UserId));
                 await _unitOfWork.SaveAsync();
 
                 await _unitOfWork.CommitTransactionAsync();

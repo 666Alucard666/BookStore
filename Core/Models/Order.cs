@@ -15,12 +15,13 @@ public class Order : BaseEntity
     [Required]
     public string PhoneNumber { get; set; }
     [Required]
-    public string Address { get; set; }
+    public string Adress { get; set; }
     [Required]
     public DateTime Date { get; set; }
     [Required]
     public int UserId { get; set; }
-    
+    [Required]
+    public string Recipient { get; set; }
     public virtual User User { get; set; }
     
     public virtual ICollection<OrdersBooks> OrdersBook { get; set; }
