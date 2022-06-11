@@ -8,14 +8,15 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-
+import EditModalWindow from "../components/books/EditModalWindow";
 import ClearIcon from "@mui/icons-material/Clear";
 
 import { getBooks } from "../api/api";
 import { Categories, SortPopup } from "../components/index";
 import { useDispatch, useSelector } from "react-redux";
-import { setBooks } from "../state/actions/booksAction";
+import { pickBook, setBooks } from "../state/actions/booksAction";
 import { BooksWrap } from "../components/books/BooksWrap";
+import CreateModalWindow from "../components/books/CreateModalWindow";
 
 function Home() {
   const categories = [
@@ -35,12 +36,14 @@ function Home() {
 
   React.useEffect(() => {
     getBooks().then((res) => dispatch(setBooks(res.data)));
+    dispatch(pickBook({}));
   }, [dispatch]);
 
   const universalSearch = (row) => {
     const value = row.name + row.author;
     return value?.toLowerCase().indexOf(search.toLowerCase()) > -1;
   };
+
   function searchBook(rows) {
     return rows?.filter((row) => universalSearch(row));
   }
@@ -106,6 +109,8 @@ function Home() {
       <div className="content__items">
         <BooksWrap data={searchBook(books.items)} cart={cart} />
       </div>
+      <EditModalWindow />
+      <CreateModalWindow/>
     </div>
   );
 }

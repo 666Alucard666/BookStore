@@ -10,4 +10,10 @@
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DynamicPDF.CoreSuite, Version=11.32.0.46501, Culture=neutral, PublicKeyToken=09b5ce0d5c0a9d8b">
+      <HintPath>C:\Users\DVO\.nuget\packages\cete.dynamicpdf.coresuite.net\11.32.0\lib\net5.0\DynamicPDF.CoreSuite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

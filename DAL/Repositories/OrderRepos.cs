@@ -36,6 +36,12 @@ public class OrderRepos :  IGenericRepos<Order>, IDisposable
     {
         var order = await context.Orders.FirstOrDefaultAsync(predicate);
         order.OrdersBook = context.OrdersBooks.Where(ob=>ob.OrderId == order.OrderId).ToList();
+        order.Sum = 0;
+        foreach (var ob in order.OrdersBook)
+        {
+            var b = context.Books.Find(ob.BookId);
+            order.Sum += b.Price*ob.Count;
+        }
         return order;
     }
 
@@ -51,7 +57,19 @@ public class OrderRepos :  IGenericRepos<Order>, IDisposable
 
     public IEnumerable<Order> Get(Func<Order, bool> predicate)
     {
-        return context.Orders.Where(predicate).ToList();
+        var orders = context.Orders.Where(predicate).ToList();
+        foreach (var order in orders)
+        {
+            order.OrdersBook = context.OrdersBooks.Where(ob=>ob.OrderId == order.OrderId).ToList();
+            order.Sum = 0;
+            foreach (var ob in order.OrdersBook)
+            {
+                var b = context.Books.Find(ob.BookId);
+                order.Sum += b.Price*ob.Count;
+            }
+        }
+
+        return orders;
     }
 
     public async Task<bool> Any(Expression<Func<Order, bool>> predicate)

@@ -285,7 +285,7 @@ const SignUp = () => {
                       variant="outlined"
                       value={formData.email}
                       validators={["required", "isEmail"]}
-                      errorMessages={["Это необходимое поле", "Некорректный Email"]}
+                      errorMessages={["RequiredField", "Invalid Email"]}
                       margin="normal"
                     />
                   </Grid>

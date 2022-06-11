@@ -667,7 +667,10 @@
         },
         "runtime": {
           "bin/placeholder/Core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "DAL.Abstractions/1.0.0": {
         "type": "project",
@@ -680,7 +683,10 @@
         },
         "runtime": {
           "bin/placeholder/DAL.Abstractions.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -1972,11 +1978,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DVO\\source\\repos\\BookStore\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\DVO\\source\\repos\\BookStore\\DAL\\DAL.csproj",
+      "projectPath": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DVO\\source\\repos\\BookStore\\DAL\\obj\\",
+      "outputPath": "D:\\LearningRepos\\BookStore\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
@@ -1999,11 +2005,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\DVO\\source\\repos\\BookStore\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\DVO\\source\\repos\\BookStore\\Core\\Core.csproj"
+            "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
+              "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj"
             },
-            "C:\\Users\\DVO\\source\\repos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj": {
-              "projectPath": "C:\\Users\\DVO\\source\\repos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj"
+            "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj": {
+              "projectPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj"
             }
           }
         }
@@ -2058,6 +2064,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

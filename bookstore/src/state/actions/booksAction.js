@@ -19,3 +19,7 @@ export const pickBook = (book) => ({
   type: "CHOOSE_BOOK",
   payload: book,
 });
+export const deleteBook = (book) => ({
+  type: "DELETE_BOOK",
+  payload: book,
+});

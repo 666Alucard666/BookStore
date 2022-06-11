@@ -1,7 +1,7 @@
 import React from "react";
 import BookBlock from "./BookBlock";
 
-export const BooksWrap = ({ data, cart }) => {
+export const BooksWrap = ({ data, cart, }) => {
   return (
     <>
       {data.map((book) => (

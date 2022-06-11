@@ -1,4 +1,5 @@
 ﻿using BLL.Abstractions.ServiceInterfaces;
+using ceTe.DynamicPDF;
 using Core.DTO_Models;
 using Core.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -30,7 +31,6 @@ namespace BookStoreUI.Controllers
                 return BadRequest("0 books in basket");
             }
             var o = await _orderService.MakeOrder(order);
-
             if (!o)
             {
                 return BadRequest("Order cannot be created!");
@@ -85,5 +85,20 @@ namespace BookStoreUI.Controllers
             }
             return Ok(b);
         }
+        [HttpGet("GetOrdersReceipt")]
+        public async Task<ActionResult<bool>> GetOrdersReceipt([FromQuery]int id)
+        {
+            if (id == 0)
+            {
+                return BadRequest("Wrong id!");
+            }
+            var b = await _orderService.CreateReceipt(id);
+            if (b == null)
+            {
+                return BadRequest("None orders with this number");
+            }
+            return Ok(true);
+        }
+        
     }
 }

@@ -76,7 +76,9 @@ function Cart() {
     dispatch(minusCartItem(id));
   };
 
-  const onClickOrder = () => {
+  const onClickOrder = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     setOrderData({
       ...orderData,
       books: books.map((b) => {

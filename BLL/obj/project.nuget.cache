@@ -1,11 +1,37 @@
 {
   "version": 2,
-  "dgSpecHash": "BJFZzQL+c1leNgXCJtpIoAeJoMnu7ZE7N8/THWC3FpAzeUKyLadvS8dE3nyd8Eoe3Zk2oMrAQMtod1lbsRf+4Q==",
+  "dgSpecHash": "GHUP0Gzf/1zgsE8Va9a6omH+Y54JIoVDkGbXJMSj+P3A2+ncFybtFY+FOLOAE8kW8DB57qYwjtg8pqgz7AM95g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DVO\\source\\repos\\BookStore\\BLL\\BLL.csproj",
+  "projectFilePath": "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DVO\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\cete.dynamicpdf.coresuite.net\\11.32.0\\cete.dynamicpdf.coresuite.net.11.32.0.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512"
+    "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\system.security.cryptography.cng\\4.7.0\\system.security.cryptography.cng.4.7.0.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\system.security.cryptography.pkcs\\4.7.0\\system.security.cryptography.pkcs.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle 1.8.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'iTextSharp 5.5.13.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

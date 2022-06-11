@@ -48,6 +48,7 @@ public class UserService : IUserService
             PhoneNumber = user.PhoneNumber,
             Name = user.Name,
             Surname = user.Surname,
+            Role = user.Role,
             Orders = new List<Order>(),
         };
         crUser.Password = PasswordHasher.HashPassword(crUser.Password);

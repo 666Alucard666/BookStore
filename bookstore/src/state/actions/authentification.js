@@ -5,3 +5,8 @@ export const signOut = () => {
     });
   };
 };
+
+export const refreshedToken = (data) => ({
+  type: "REFRESH_TOKEN",
+  payload: data,
+});

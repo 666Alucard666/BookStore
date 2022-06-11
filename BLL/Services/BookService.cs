@@ -85,32 +85,35 @@ namespace BLL.Services
                 catch
                 {
                     await _unitOfWork.RollbackTransactionAsync();
+                    return false;
                 }
             }
             return true;
         }
 
-        public async Task<bool> EditPrice(int id, double price)
+        public async Task<bool> EditBookInfo(BookDTO updateBook)
         {
-            if (!await _unitOfWork.BookRepository.Any(b=>b.BookId == id))
+            if (updateBook==null)
             {
                 return false;
             }
 
-            var needbook = await _unitOfWork.BookRepository.FirstOrDefaultAsync(b => b.BookId == id);
-            
-            if (needbook == null)
+            var book = _unitOfWork.BookRepository.FindById(updateBook.Id);
+            if (book==null)
             {
                 return false;
             }
-            
-            needbook.Price = price;
-
+            book.Author = !string.IsNullOrEmpty(updateBook.Author) ? updateBook.Author : book.Author;
+            book.Name = !string.IsNullOrEmpty(updateBook.Name) ? updateBook.Name : book.Name;
+            book.Genre = !string.IsNullOrEmpty(updateBook.Genre) ? updateBook.Genre : book.Genre;
+            book.Publishing = !string.IsNullOrEmpty(updateBook.Publishing) ? updateBook.Publishing : book.Publishing;
+            book.Price = updateBook.Price!=0.0 ? updateBook.Price : book.Price;
+            book.Image = !string.IsNullOrEmpty(updateBook.Image) ? updateBook.Image : book.Image;
             using (_unitOfWork.BeginTransactionAsync())
             {
                 try
                 {
-                    await _unitOfWork.BookRepository.Update(needbook);
+                    await _unitOfWork.BookRepository.Update(book);
                     await _unitOfWork.SaveAsync();
 
                     await _unitOfWork.CommitTransactionAsync();
@@ -118,6 +121,7 @@ namespace BLL.Services
                 catch
                 {
                     await _unitOfWork.RollbackTransactionAsync();
+                    return false;
                 }
             }
             return true;
@@ -210,41 +214,7 @@ namespace BLL.Services
                 };
                 result.Add(bookDTO);
             }
-
-                return result;
-        }
-
-        public async Task<bool> EditIamge(int id, string image)
-        {
-            if (!await _unitOfWork.BookRepository.Any(b => b.BookId == id))
-            {
-                return false;
-            }
-
-            var needbook = await _unitOfWork.BookRepository.FirstOrDefaultAsync(b => b.BookId == id);
-
-            if (needbook == null)
-            {
-                return false;
-            }
-
-            needbook.Image = image;
-
-            using (_unitOfWork.BeginTransactionAsync())
-            {
-                try
-                {
-                    await _unitOfWork.BookRepository.Update(needbook);
-                    await _unitOfWork.SaveAsync();
-
-                    await _unitOfWork.CommitTransactionAsync();
-                }
-                catch
-                {
-                    await _unitOfWork.RollbackTransactionAsync();
-                }
-            }
-            return true;
+            return result;
         }
     }
 }

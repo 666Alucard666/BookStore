@@ -3,6 +3,8 @@ const initialState = {
   isLoaded: false,
   sorting: "Alphabet",
   currentBook: {},
+  openEdit: false,
+  openCreate:false,
 };
 
 const bookReducer = (state = initialState, { type, payload }) => {
@@ -75,7 +77,6 @@ const bookReducer = (state = initialState, { type, payload }) => {
         isLoaded: true,
         sorting: state.sorting,
       };
-
     case "SORT_BOOKS_ALPHABET":
       return {
         ...initialState,
@@ -124,7 +125,36 @@ const bookReducer = (state = initialState, { type, payload }) => {
     case "CHOOSE_BOOK":
       return {
         ...initialState,
+        items: state.items,
         currentBook: payload,
+        sorting: state.sorting,
+        openEdit: state.openEdit,
+      };
+    case "DELETE_BOOK":
+      state.items.splice(state.items.indexOf(payload), 1);
+      return {
+        ...initialState,
+        items: state.items,
+        currentBook: state.currentBook,
+        sorting: state.sorting,
+        openEdit: state.openEdit,
+      };
+    case "ACTION_WITH_MODAL":
+      return {
+        ...initialState,
+        items: state.items,
+        currentBook: state.currentBook,
+        sorting: state.sorting,
+        openEdit: payload,
+      };
+      case "ACTION_WITH_CREATE_MODAL":
+      return {
+        ...initialState,
+        items: state.items,
+        currentBook: state.currentBook,
+        sorting: state.sorting,
+        openEdit: state.openEdit,
+        openCreate: payload,
       };
     default:
       return state;

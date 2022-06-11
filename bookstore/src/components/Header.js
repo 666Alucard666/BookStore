@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
@@ -12,8 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 
 import logoSvg from "../assets/img/books-logo.svg";
 import Button from "./Button";
-import { signOut } from "../state/actions/authentification";
+import { refreshedToken, signOut } from "../state/actions/authentification";
 import { clearCart } from "../state/actions/cartAction";
+import { refreshToken } from "../api/api";
 
 export default function Header() {
   const user = useSelector((state) => state.account);
@@ -29,6 +31,13 @@ export default function Header() {
   };
 
   const navigate = useNavigate();
+  
+  const createBook = () => {
+    dispatch({
+      type: "ACTION_WITH_CREATE_MODAL",
+      payload: true,
+    });
+  };
   const logOut = () => {
     dispatch(signOut());
     dispatch(clearCart());
@@ -37,8 +46,20 @@ export default function Header() {
   const goto = () => {
     if (user.userId === null) {
       navigate("/signIn");
+    } else navigate("/orderPage");
+  };
+  const gotoCart = () => {
+    if (user.userId === null) {
+      navigate("/signIn");
     } else navigate("/cart");
   };
+  React.useEffect(() => {
+    console.log(!moment(user.cancelData, moment.ISO_8601) > moment(moment(), moment.ISO_8601));
+    if (!moment(user.cancelData, moment.ISO_8601) > moment(moment(), moment.ISO_8601)) {
+      console.log(111);
+      refreshToken(user.userId).then((res) => dispatch(refreshedToken(res.data)));
+    }
+  }, []);
 
   return (
     <div className="header">
@@ -115,7 +136,7 @@ export default function Header() {
             <Divider />
             <MenuItem>
               <div className="header__cart">
-                <Button className="button--cart" onClick={() => goto()}>
+                <Button className="button--cart" onClick={() => gotoCart()}>
                   <span>{cart.totalPrice.toFixed(2)}$</span>
                   <div className="button__delimiter"></div>
                   <svg
@@ -153,6 +174,13 @@ export default function Header() {
             {user.userId !== null ? (
               <MenuItem sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Button onClick={logOut}>Logout</Button>
+              </MenuItem>
+            ) : (
+              ""
+            )}
+            {user.role === "Admin" ? (
+              <MenuItem sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Button onClick={createBook}>Create book</Button>
               </MenuItem>
             ) : (
               ""

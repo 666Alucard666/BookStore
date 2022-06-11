@@ -3,6 +3,8 @@
 @import 'libs/normalize';
 
 @import 'components/all';
+@import 'pages/bookPage';
+@import 'pages/orderPage';
 
 body {
   background-color: $background;

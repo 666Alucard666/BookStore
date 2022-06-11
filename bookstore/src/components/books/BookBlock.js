@@ -1,12 +1,14 @@
 import { Typography } from "@mui/material";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { pickBook } from "../../state/actions/booksAction";
+import { deleteBookRequest } from "../../api/api";
+import { deleteBook, pickBook } from "../../state/actions/booksAction";
 import { addBooksToCart } from "../../state/actions/cartAction";
 
 export default function BookBlock({ book, addedCount }) {
   const dispatch = useDispatch();
+  const role = useSelector((state) => state.account?.role);
   const navigate = useNavigate();
   const handleClick = () => {
     dispatch(addBooksToCart(book));
@@ -14,6 +16,17 @@ export default function BookBlock({ book, addedCount }) {
   const handleImageClick = () => {
     dispatch(pickBook(book));
     navigate("/bookPage");
+  };
+  const handleDeleteClick = () => {
+    dispatch(deleteBook(book));
+    deleteBookRequest(book);
+  };
+  const handleUpdateClick = () => {
+    dispatch({
+      type: "ACTION_WITH_MODAL",
+      payload: true,
+    });
+    dispatch(pickBook(book));
   };
   return (
     <div className="pizza-block">
@@ -55,6 +68,18 @@ export default function BookBlock({ book, addedCount }) {
           {addedCount && <i>{addedCount}</i>}
         </div>
       </div>
+      {role === "Admin" ? (
+        <div className="block">
+          <div className="buttonDelete" onClick={handleDeleteClick}>
+            <span>Delete</span>
+          </div>
+          <div className="buttonUpdate" onClick={handleUpdateClick}>
+            <span>Update</span>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

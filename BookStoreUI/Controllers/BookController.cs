@@ -37,23 +37,11 @@ namespace BookStoreUI.Controllers
         }
 
 
-        [HttpPut("EditBookPrice")]
-        public async Task<ActionResult> EditPrice([FromBody]EdPrice price)
+        [HttpPut("EditBook")]
+        public async Task<ActionResult> EditBook([FromBody]BookDTO book)
         {
-            var b = await _bookService.EditPrice(price.Id, price.Price);
-
-            if (!b)
-            {
-                return BadRequest("Price cannot be changed!");
-            }
-
-            return Ok();
-        }
-        [HttpPut("EditBookImage")]
-        public async Task<ActionResult> EditImage([FromBody] EdPrice price)
-        {
-            var b = await _bookService.EditPrice(price.Id, price.Price);
-
+            var b = await _bookService.EditBookInfo(book);
+            
             if (!b)
             {
                 return BadRequest("Price cannot be changed!");
@@ -62,7 +50,7 @@ namespace BookStoreUI.Controllers
             return Ok();
         }
         [HttpDelete("DeleteBook")]
-        public async Task<ActionResult> Delete(BookDTO book)
+        public async Task<ActionResult> Delete([FromBody]BookDTO book)
         {
             if (book == null)
             {
