@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "BLL.Abstractions/1.0.0": {
         "dependencies": {
-          "Core": "1.0.0"
+          "Core": "1.0.0",
+          "DynamicPDF.CoreSuite": "11.32.0.46501"
         },
         "runtime": {
           "BLL.Abstractions.dll": {}
@@ -40,6 +41,14 @@
         "runtime": {
           "Core.dll": {}
         }
+      },
+      "DynamicPDF.CoreSuite/11.32.0.46501": {
+        "runtime": {
+          "DynamicPDF.CoreSuite.dll": {
+            "assemblyVersion": "11.32.0.46501",
+            "fileVersion": "11.32.0.46501"
+          }
+        }
       }
     }
   },
@@ -65,6 +74,11 @@
     },
     "Core/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DynamicPDF.CoreSuite/11.32.0.46501": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

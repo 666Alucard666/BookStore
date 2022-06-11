@@ -1,8 +1,5 @@
 ﻿using BLL.Abstractions.ServiceInterfaces;
 using Core.DTO_Models;
-using Core.Models;
-using FluentResults;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -42,17 +39,20 @@ namespace BookStoreUI.Controllers
             }
             var res = new UserAfterLogin
             {
-                User = user,
-                Token = GenerateJwtToken(loginPswd),
+                UserId = user.UserId,
+                Token = GenerateJwtToken(user.UserId),
+                CancelDate = DateTime.UtcNow.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ss"),
+                Role = user.Role,
             };
             return Ok(res);
         }
 
-        private string GenerateJwtToken(LoginDTO login)
+        private string GenerateJwtToken(int id)
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, login.Login),
+                new Claim(ClaimTypes.NameIdentifier, id.ToString()),
+                new Claim(ClaimTypes.SerialNumber, new Guid().ToString()),
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSetings:Token").Value));
@@ -86,6 +86,17 @@ namespace BookStoreUI.Controllers
             }
 
             return Ok(true); // return jwt token
+        }
+
+        [HttpGet]
+        [Route("RefreshToken")]
+        public async Task<ActionResult> RefreshToken(int userId)
+        {
+            return Ok(new
+            {
+                Token = GenerateJwtToken(userId),
+                CancelDate = DateTime.UtcNow.AddDays(1).ToString("yyyyMMddTHH:mm:ss"),
+            });
         }
     }
 }

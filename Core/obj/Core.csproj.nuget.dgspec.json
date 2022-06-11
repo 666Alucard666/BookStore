@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DVO\\source\\repos\\BookStore\\Core\\Core.csproj": {}
+    "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DVO\\source\\repos\\BookStore\\Core\\Core.csproj": {
+    "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DVO\\source\\repos\\BookStore\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\DVO\\source\\repos\\BookStore\\Core\\Core.csproj",
+        "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DVO\\source\\repos\\BookStore\\Core\\obj\\",
+        "outputPath": "D:\\LearningRepos\\BookStore\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
@@ -62,6 +62,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

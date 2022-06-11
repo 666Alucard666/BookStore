@@ -1,16 +1,7 @@
 ﻿using BLL.Abstractions.ServiceInterfaces;
 using BLL.Services;
-using Core.Models;
 using DAL;
 using DAL.Abstractions.Interfaces;
-using DAL.Repositories;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -60,22 +51,6 @@ namespace BookStoreUI
                     }
                 }); ;
             });
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder.WithOrigins("http://localhost:4200/")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .AllowCredentials();
-                });
-                options.AddPolicy("AllowAllOrigin", builder =>
-                {
-                    builder.AllowAnyOrigin();
-                    builder.WithMethods("GET", "PUT", "POST", "DELETE");
-                    builder.AllowAnyHeader();
-                });
-            });
             
             services.AddControllers().AddNewtonsoftJson(options =>
             {
@@ -93,6 +68,19 @@ namespace BookStoreUI
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("the best secure in the world")),
                         ValidateIssuer = false,
                         ValidateAudience = false,
+                        ClockSkew = TimeSpan.Zero
+                    };
+                    options.AutomaticRefreshInterval = TimeSpan.FromDays(1);
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnAuthenticationFailed = context =>
+                        {
+                            if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                            {
+                                context.Response.Headers.Add("Token-Expired", "true");
+                            }
+                            return Task.CompletedTask;
+                        }
                     };
                 });
         }
@@ -110,12 +98,11 @@ namespace BookStoreUI
             app.UseAuthorization();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore v1"));
-            app.UseCors(options =>
-            {
-                options.WithOrigins("http://localhost:4200")
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-            });
+            app.UseCors(options => options
+                           .WithOrigins("http://localhost:3000", "*")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader()
+                           .AllowCredentials());
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }

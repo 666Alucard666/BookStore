@@ -2,11 +2,6 @@
 using Core.DTO_Models;
 using Core.Models;
 using DAL.Abstractions.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -38,6 +33,8 @@ namespace BLL.Services
                 Price = book.Price,
                 Publishing = book.Publishing,
                 AmountOnStore = book.AmountOnStore,
+                Image = book.Image,
+                Created = book.Created,
                 OrdersBook = new List<OrdersBooks>()
             };
 
@@ -88,32 +85,35 @@ namespace BLL.Services
                 catch
                 {
                     await _unitOfWork.RollbackTransactionAsync();
+                    return false;
                 }
             }
             return true;
         }
 
-        public async Task<bool> EditPrice(int id, double price)
+        public async Task<bool> EditBookInfo(BookDTO updateBook)
         {
-            if (!await _unitOfWork.BookRepository.Any(b=>b.BookId == id))
+            if (updateBook==null)
             {
                 return false;
             }
 
-            var needbook = await _unitOfWork.BookRepository.FirstOrDefaultAsync(b => b.BookId == id);
-            
-            if (needbook == null)
+            var book = _unitOfWork.BookRepository.FindById(updateBook.Id);
+            if (book==null)
             {
                 return false;
             }
-            
-            needbook.Price = price;
-
+            book.Author = !string.IsNullOrEmpty(updateBook.Author) ? updateBook.Author : book.Author;
+            book.Name = !string.IsNullOrEmpty(updateBook.Name) ? updateBook.Name : book.Name;
+            book.Genre = !string.IsNullOrEmpty(updateBook.Genre) ? updateBook.Genre : book.Genre;
+            book.Publishing = !string.IsNullOrEmpty(updateBook.Publishing) ? updateBook.Publishing : book.Publishing;
+            book.Price = updateBook.Price!=0.0 ? updateBook.Price : book.Price;
+            book.Image = !string.IsNullOrEmpty(updateBook.Image) ? updateBook.Image : book.Image;
             using (_unitOfWork.BeginTransactionAsync())
             {
                 try
                 {
-                    await _unitOfWork.BookRepository.Update(needbook);
+                    await _unitOfWork.BookRepository.Update(book);
                     await _unitOfWork.SaveAsync();
 
                     await _unitOfWork.CommitTransactionAsync();
@@ -121,18 +121,19 @@ namespace BLL.Services
                 catch
                 {
                     await _unitOfWork.RollbackTransactionAsync();
+                    return false;
                 }
             }
             return true;
         }
 
-        public async Task<BookDTO> GetBook(string name)
+        public async Task<BookDTO> GetBook(int id)
         {
-            if (string.IsNullOrEmpty(name))
+            if (id==0)
             {
                 return null;
             }
-            var book = await _unitOfWork.BookRepository.FirstOrDefaultAsync(b => b.Name == name);
+            var book = await _unitOfWork.BookRepository.FirstOrDefaultAsync(b => b.BookId == id);
             if (book == null)
             {
                 return null;
@@ -146,19 +147,43 @@ namespace BLL.Services
                 Id = book.BookId,
                 Price = book.Price,
                 Publishing = book.Publishing,
+                Image = book.Image,
+                Created = book.Created,
             };
         }
+        public IEnumerable<BookDTO> GetAllBooks()
+        {
+            var collection = _unitOfWork.BookRepository.GetAll().ToList();
+            var result = new List<BookDTO>();
+            foreach (var book in collection)
+            {
+                var bookDTO = new BookDTO
+                {
+                    Id = book.BookId,
+                    AmountOnStore = book.AmountOnStore,
+                    Author = book.Author,
+                    Genre = book.Genre,
+                    Price = book.Price,
+                    Publishing = book.Publishing,
+                    Name = book.Name,
+                    Image = book.Image,
+                    Created = book.Created,
+                };
+                result.Add(bookDTO);
+            }
 
+            return result;
+        }
         public IEnumerable<BookDTO> GetAllBooksByFilter(BookFilter filter)
         {
             var collection = _unitOfWork.BookRepository.GetAll().ToList();
             var result = new List<BookDTO>();
-            if (!String.IsNullOrEmpty(filter.Author))
+            if (!String.IsNullOrEmpty(filter.Author) && !(filter.Author == "_"))
             {
                 collection = collection.Where(b => b.Author == filter.Author).ToList();
             }
 
-            if (!String.IsNullOrEmpty(filter.Genre))
+            if (!String.IsNullOrEmpty(filter.Genre)&& !(filter.Genre == "_"))
             {
                 collection = collection.Where(b => b.Genre.Equals(filter.Genre)).ToList();
             }
@@ -184,10 +209,11 @@ namespace BLL.Services
                     Price = book.Price,
                     Publishing = book.Publishing,
                     Name = book.Name,
+                    Image = book.Image,
+                    Created = book.Created,
                 };
                 result.Add(bookDTO);
             }
-
             return result;
         }
     }

@@ -1,0 +1,26 @@
+.modalContent {
+    display: flex;
+    justify-content: center;
+}
+
+.currencyLabel {
+    margin-top: 20px;
+    color: #999999;
+    font-size: 15px;
+}
+
+.currency {
+    max-width: auto;
+    min-width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 0px 5px;
+    color: #fff;
+    background-color: #313131;
+    margin: 20px 0px 0px 20px; 
+    cursor: pointer;
+    display: block;
+}
+

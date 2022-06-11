@@ -9,10 +9,42 @@
       "BLL/1.0.0": {
         "dependencies": {
           "BLL.Abstractions": "1.0.0",
-          "DAL.Abstractions": "1.0.0"
+          "DAL.Abstractions": "1.0.0",
+          "ceTe.DynamicPDF.CoreSuite.NET": "11.32.0",
+          "iTextSharp": "5.5.13.3"
         },
         "runtime": {
           "BLL.dll": {}
+        }
+      },
+      "BouncyCastle/1.8.9": {
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.9.0",
+            "fileVersion": "1.8.20343.1"
+          }
+        }
+      },
+      "ceTe.DynamicPDF.CoreSuite.NET/11.32.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "4.7.0"
+        },
+        "runtime": {
+          "lib/net5.0/DynamicPDF.CoreSuite.dll": {
+            "assemblyVersion": "11.32.0.46501",
+            "fileVersion": "11.32.0.46501"
+          }
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {
+            "assemblyVersion": "5.5.13.3",
+            "fileVersion": "5.5.13.3"
+          }
         }
       },
       "Microsoft.OpenApi/1.2.3": {
@@ -32,6 +64,12 @@
             "assemblyVersion": "6.3.1.0",
             "fileVersion": "6.3.1.0"
           }
+        }
+      },
+      "System.Security.Cryptography.Cng/4.7.0": {},
+      "System.Security.Cryptography.Pkcs/4.7.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Cng": "4.7.0"
         }
       },
       "BLL.Abstractions/1.0.0": {
@@ -66,6 +104,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BouncyCastle/1.8.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "path": "bouncycastle/1.8.9",
+      "hashPath": "bouncycastle.1.8.9.nupkg.sha512"
+    },
+    "ceTe.DynamicPDF.CoreSuite.NET/11.32.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V//MsUlYaC6SBL4gLhKEp+PyTCOJJ24whYTB1TaPPjXl6ePPdJk3IhV5aLA/WaeZB/+6SIUwDZX66xHDGF3ENg==",
+      "path": "cete.dynamicpdf.coresuite.net/11.32.0",
+      "hashPath": "cete.dynamicpdf.coresuite.net.11.32.0.nupkg.sha512"
+    },
+    "iTextSharp/5.5.13.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
+      "path": "itextsharp/5.5.13.3",
+      "hashPath": "itextsharp.5.5.13.3.nupkg.sha512"
+    },
     "Microsoft.OpenApi/1.2.3": {
       "type": "package",
       "serviceable": true,
@@ -79,6 +138,20 @@
       "sha512": "sha512-idAFh4xhyJHYHfdLVOOn+BmscBul1OQbWsnL6YPJE8tO/0y6S79hDCvs6OY5VI093/9+1pYY3j31Zet9yaDZjA==",
       "path": "swashbuckle.aspnetcore.swagger/6.3.1",
       "hashPath": "swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Cng/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4WQjFuypWtxb/bl/YwEE7LYGn4fgpsikFfBU6xwEm4YBYiRAhXAEJ62lILBu2JJSFbClIAntFTGfDZafn8yZTg==",
+      "path": "system.security.cryptography.cng/4.7.0",
+      "hashPath": "system.security.cryptography.cng.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Srzh6YlhjuMxaqMyeCCdZs22cucaUAG6SKDd3gNHBJmre0VZ71ekzWu9rvLD4YXPetyNdPvV6Qst+8C++9v3Q==",
+      "path": "system.security.cryptography.pkcs/4.7.0",
+      "hashPath": "system.security.cryptography.pkcs.4.7.0.nupkg.sha512"
     },
     "BLL.Abstractions/1.0.0": {
       "type": "project",

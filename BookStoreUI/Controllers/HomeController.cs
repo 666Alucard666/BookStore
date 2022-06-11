@@ -20,6 +20,7 @@ namespace BookStoreUI.Controllers
 
         public IActionResult Privacy()
         {
+            new HttpResponseMessage().ReasonPhrase = "";    
             return View();
         }
 

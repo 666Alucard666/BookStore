@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Core.Models
 {
@@ -29,6 +25,10 @@ namespace Core.Models
         public string Publishing { get; set; }
         [Required]
         public int AmountOnStore { get; set; }
+        [Required]
+        public string Image { get; set; }
+        [Required]
+        public DateTime Created { get; set; }
         public virtual ICollection<OrdersBooks> OrdersBook { get; set; }
     }
 }
