@@ -38,7 +38,7 @@ export default function OrderPage() {
           <h1>Orders Page</h1>
         </div>
       </div>
-      {orders === [] || orders === undefined ? (
+      {orders !== [] || orders !== undefined ? (
         <ul>
           {orders.map((o) => {
             return (
