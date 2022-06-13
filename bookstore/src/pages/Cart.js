@@ -75,10 +75,10 @@ function Cart() {
   const onMinusItem = (id) => {
     dispatch(minusCartItem(id));
   };
-
-  const onClickOrder = async (event) => {
+  const onOpen =(event)=>{
     event.preventDefault();
     event.stopPropagation();
+
     setOrderData({
       ...orderData,
       books: books.map((b) => {
@@ -88,6 +88,12 @@ function Cart() {
         };
       }),
     });
+    setOpen(true)
+  };
+  const onClickOrder = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
     postOrder(orderData)
       .catch((err) => {
         if (err.response.data === undefined) {
@@ -305,7 +311,7 @@ function Cart() {
 
                   <span>Return</span>
                 </a>
-                <Button onClick={() => setOpen(true)} className="pay-btn">
+                <Button onClick={onOpen} className="pay-btn">
                   <span>Create order</span>
                 </Button>
               </div>

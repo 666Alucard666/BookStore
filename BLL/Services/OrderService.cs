@@ -49,6 +49,14 @@ public class OrderService : IOrderService
                         OrderId = newOrder.OrderId,
                         Count = book.Count,
                     });
+                    var updbook = _unitOfWork.BookRepository.FindById(book.Book.Id);
+                    if (updbook.AmountOnStore-book.Count < 0)
+                    {
+                        return false;
+                    }
+
+                    updbook.AmountOnStore = updbook.AmountOnStore - book.Count;
+                    await _unitOfWork.BookRepository.Update(updbook);
                 }
                 
                 _unitOfWork.OrderRepository.Create(newOrder);
@@ -72,6 +80,7 @@ public class OrderService : IOrderService
             return false;
         }
         var delorder = _unitOfWork.OrderRepository.FirstOrDefault(o => o.OrderNumber == order.OrderNumber && o.OrderId == order.OrderId);
+        
         if (delorder == null)
         {
             return false;
@@ -80,6 +89,13 @@ public class OrderService : IOrderService
         {
             try
             {
+                foreach (var book in delorder.OrdersBook)
+                {
+                    var updbook = _unitOfWork.BookRepository.FindById(book.BookId);
+
+                    updbook.AmountOnStore = updbook.AmountOnStore + book.Count;
+                    await _unitOfWork.BookRepository.Update(updbook);
+                }
                 _unitOfWork.OrderRepository.Remove(delorder);
                 await _unitOfWork.SaveAsync();
 
@@ -180,7 +196,7 @@ public class OrderService : IOrderService
         page.Elements.Add(table);
         page.Elements.Add(table2);
             
-        document.Draw(@"D:\LearningRepos\BookStore\Receipt.pdf");
+        document.Draw($@"{Environment.CurrentDirectory}\Receipt.pdf");
         return document;
     }
     

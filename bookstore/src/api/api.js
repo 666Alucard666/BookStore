@@ -49,6 +49,7 @@ export const postSignUp = async (Name, Email, Phone, Password, Surname, UserName
       Email: Email,
       PhoneNumber: Phone,
       Password: Password,
+      Role: "User",
     }),
   });
 
@@ -154,14 +155,14 @@ export const createBookRequest = async (book) => {
     Publishing: book.publishing,
     AmountOnStore: book.amountOnStore,
     Image: book.image,
-    Created: moment(moment(),"YYYY-MM-DDTHH:mm:ssz"),
+    Created: moment(moment(), "YYYY-MM-DDTHH:mm:ssz"),
   });
 };
 
-export const createReceipt = async (id)=>{
-  return await axios.get(endpoint + "order/GetOrdersReceipt",{
-    params:{
-      id:id,
-    }
-  })
-}
+export const createReceipt = async (id) => {
+  return await axios.get(endpoint + "order/GetOrdersReceipt", {
+    params: {
+      id: id,
+    },
+  });
+};

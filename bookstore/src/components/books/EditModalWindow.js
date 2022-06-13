@@ -28,7 +28,7 @@ const useStyles = makeStyles(() => ({
   },
   card: {
     padding: "2rem",
-    marginLeft: "600px",
+    marginLeft: "800px",
     marginTop: "100px",
     borderRadius: "10px",
     minWidth: "290px",
@@ -90,6 +90,8 @@ export default function EditModalWindow() {
     dispatch(pickBook({}));
   };
   const handleExitSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     dispatch({
       type: "ACTION_WITH_MODAL",
       payload: false,
@@ -154,7 +156,7 @@ export default function EditModalWindow() {
       if (value === "") {
         return true;
       }
-      var regexp = /^(https?:\/\/)?/;
+      var regexp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
       if (value.match(regexp)) {
         return true;
       }
@@ -170,16 +172,26 @@ export default function EditModalWindow() {
       }
       return false;
     });
+    ValidatorForm.addValidationRule("isTitle", (value) => {
+      if (value === "") {
+        return true;
+      }
+      var regexp = /^[A-Za-z0-9 ]+$/;
+      if (value.match(regexp)) {
+        return true;
+      }
+      return false;
+    });
     return () => {
       ValidatorForm.removeValidationRule("isHaveLetters");
       ValidatorForm.removeValidationRule("isHaveUpperCase");
       ValidatorForm.removeValidationRule("isHaveLowerCase");
       ValidatorForm.removeValidationRule("isURL");
+      ValidatorForm.removeValidationRule("isTitle");
       ValidatorForm.removeValidationRule("isHaveNumbers");
     };
   });
   const handleChange = (event) => {
-    console.log(event.target.value);
     setBookForm({
       ...bookForm,
       [event.target.name]: event.target.value,
@@ -208,6 +220,8 @@ export default function EditModalWindow() {
                         variant="outlined"
                         value={bookForm.name}
                         margin="normal"
+                        validators={["isTitle"]}
+                        errorMessages={"Invalid title"}
                       />
                     </Grid>
                     <Grid item className={classes.customInput}>
@@ -220,7 +234,7 @@ export default function EditModalWindow() {
                         value={bookForm.genre}
                         margin="normal"
                         validators={["isHaveLetters", "isHaveLowerCase", "isHaveUpperCase"]}
-                        errorMessages={["Invalid genre!"]}
+                        errorMessages={["Invalid genre!","CAPS","Lower case!"]}
                       />
                     </Grid>
                     <Grid item className={classes.customInput}>
@@ -233,7 +247,7 @@ export default function EditModalWindow() {
                         value={bookForm.author}
                         margin="normal"
                         validators={["isHaveLetters", "isHaveLowerCase", "isHaveUpperCase"]}
-                        errorMessages={["Invalid author!"]}
+                        errorMessages={["Invalid author!","CAPS","Lower case!"]}
                       />
                     </Grid>
                     <Grid item className={classes.customInput}>

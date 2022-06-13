@@ -145,7 +145,16 @@ const SignUp = () => {
       }
       return false;
     });
-
+    ValidatorForm.addValidationRule("isHaveLetters", (value) => {
+      if (value === "") {
+        return true;
+      }
+      var regexp = /^[A-Za-z\s]*$/;
+      if (value.match(regexp)) {
+        return true;
+      }
+      return false;
+    });
     return () => {
       ValidatorForm.removeValidationRule("isPasswordMatch");
       ValidatorForm.removeValidationRule("isHaveOneDigit");
@@ -154,6 +163,7 @@ const SignUp = () => {
       ValidatorForm.removeValidationRule("isHaveSixCharacters");
       ValidatorForm.removeValidationRule("isHaveNonAlphaNumericChars");
       ValidatorForm.removeValidationRule("isPhoneNumber");
+      ValidatorForm.removeValidationRule("isHaveLetters");
     };
   });
 
@@ -222,6 +232,8 @@ const SignUp = () => {
                       variant="outlined"
                       value={formData.name}
                       margin="normal"
+                      validators={["isHaveLetters", "isHaveLowerCase", "isHaveUpperCase"]}
+                      errorMessages={["Invalid name!"]}
                     />
                   </Grid>
                   <Grid item className={classes.customInput}>
@@ -233,6 +245,8 @@ const SignUp = () => {
                       variant="outlined"
                       value={formData.surname}
                       margin="normal"
+                      validators={["isHaveLetters", "isHaveLowerCase", "isHaveUpperCase"]}
+                      errorMessages={["Invalid name!"]}
                     />
                   </Grid>
                   <Grid item className={classes.customInput}>
