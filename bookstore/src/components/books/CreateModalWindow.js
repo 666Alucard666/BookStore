@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
   },
   card: {
     padding: "2rem",
-    marginLeft: "600px",
+    marginLeft: "800px",
     marginTop: "100px",
     borderRadius: "10px",
     minWidth: "290px",
@@ -53,6 +53,17 @@ export default function CreateModalWindow() {
   const classes = useStyles();
   const open = useSelector((state) => state.books.openCreate);
   const dispatch = useDispatch();
+  const [bookForm, setBookForm] = React.useState({
+    id: 0,
+    name: "",
+    genre: "",
+    author: "",
+    price: 0.0,
+    publishing: "",
+    amountOnStore: 0,
+    image: "",
+    created: undefined,
+  });
   const handleCreateSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -86,6 +97,8 @@ export default function CreateModalWindow() {
     });
   };
   const handleExitSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     dispatch({
       type: "ACTION_WITH_MODAL",
       payload: false,
@@ -103,26 +116,32 @@ export default function CreateModalWindow() {
       created: undefined,
     });
   };
-  const [bookForm, setBookForm] = React.useState({
-    id: 0,
-    name: "",
-    genre: "",
-    author: "",
-    price: 0.0,
-    publishing: "",
-    amountOnStore: 0,
-    image: "",
-    created: undefined,
-  });
+
   React.useEffect(() => {
     ValidatorForm.addValidationRule("isHaveLowerCase", (value) => {
+      if (value === "") {
+        return true;
+      }
       var regexp = /(?=.*[a-z])|(?=.*[а-я])/;
       if (value.match(regexp)) {
         return true;
       }
       return false;
     });
+    ValidatorForm.addValidationRule("isTitle", (value) => {
+      if (value === "") {
+        return true;
+      }
+      var regexp = /^[A-Za-z0-9 ]+$/;
+      if (value.match(regexp)) {
+        return true;
+      }
+      return false;
+    });
     ValidatorForm.addValidationRule("isHaveUpperCase", (value) => {
+      if (value === "") {
+        return true;
+      }
       var regexp = /(?=.*[A-Z])|(?=.*[А-Я])/;
       if (value.match(regexp)) {
         return true;
@@ -130,6 +149,9 @@ export default function CreateModalWindow() {
       return false;
     });
     ValidatorForm.addValidationRule("isHaveLetters", (value) => {
+      if (value === "") {
+        return true;
+      }
       var regexp = /^[A-Za-z\s]*$/;
       if (value.match(regexp)) {
         return true;
@@ -137,20 +159,36 @@ export default function CreateModalWindow() {
       return false;
     });
     ValidatorForm.addValidationRule("isURL", (value) => {
-      var regexp = /^(https?:\/\/)?/;
+      if (value === "") {
+        return true;
+      }
+      var regexp =
+        /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
       if (value.match(regexp)) {
         return true;
       }
       return false;
     });
     ValidatorForm.addValidationRule("isPrice", (value) => {
+      if (value === "" || value == 0) {
+        return true;
+      }
       var regexp = /[0-9]*\.[0-9]+/;
       if (value.match(regexp)) {
         return true;
       }
       return false;
     });
+    ValidatorForm.addValidationRule("isAmount", (value) => {
+      if (value === "" || (value > 0 && value % 1 === 0)) {
+        return true;
+      }
+      return false;
+    });
     ValidatorForm.addValidationRule("isHaveNumbers", (value) => {
+      if (value === "") {
+        return true;
+      }
       var regexp = /[0-9]+/;
       if (value.match(regexp)) {
         return true;
@@ -163,11 +201,12 @@ export default function CreateModalWindow() {
       ValidatorForm.removeValidationRule("isHaveLowerCase");
       ValidatorForm.removeValidationRule("isURL");
       ValidatorForm.removeValidationRule("isPrice");
+      ValidatorForm.removeValidationRule("isTitle");
+      ValidatorForm.removeValidationRule("isAmount");
       ValidatorForm.removeValidationRule("isHaveNumbers");
     };
   });
   const handleChange = (event) => {
-    console.log(event.target.value);
     setBookForm({
       ...bookForm,
       [event.target.name]: event.target.value,
@@ -196,6 +235,8 @@ export default function CreateModalWindow() {
                         variant="outlined"
                         value={bookForm.name}
                         margin="normal"
+                        validators={["isTitle"]}
+                        errorMessages={"Invalid title"}
                       />
                     </Grid>
                     <Grid item className={classes.customInput}>
@@ -258,8 +299,8 @@ export default function CreateModalWindow() {
                         onChange={handleChange}
                         variant="outlined"
                         value={bookForm.amountOnStore}
-                        validators={["isHaveNumbers"]}
-                        errorMessages={["Invalid number"]}
+                        validators={["isHaveNumbers", "isAmount"]}
+                        errorMessages={["Invalid number", "Cannot be less than 1 or invalid!"]}
                         margin="normal"
                       />
                     </Grid>

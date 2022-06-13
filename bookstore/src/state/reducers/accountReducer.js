@@ -25,7 +25,6 @@ const accountReducer = (state = initialState, { type, payload }) => {
         role:null,
       };
     case "REFRESH_TOKEN":
-      console.log(payload);
       window.localStorage.setItem("token", payload?.token);
       return {
         ...initialState,

@@ -31,7 +31,7 @@ export default function Header() {
   };
 
   const navigate = useNavigate();
-  
+
   const createBook = () => {
     dispatch({
       type: "ACTION_WITH_CREATE_MODAL",
@@ -54,9 +54,7 @@ export default function Header() {
     } else navigate("/cart");
   };
   React.useEffect(() => {
-    console.log(!moment(user.cancelData, moment.ISO_8601) > moment(moment(), moment.ISO_8601));
     if (!moment(user.cancelData, moment.ISO_8601) > moment(moment(), moment.ISO_8601)) {
-      console.log(111);
       refreshToken(user.userId).then((res) => dispatch(refreshedToken(res.data)));
     }
   }, []);
@@ -69,7 +67,7 @@ export default function Header() {
             <img width="70" height="60" src={logoSvg} alt="Books logo" />
             <div>
               <h1>Freedom Read</h1>
-              <p>Only on book pages we fill freedom</p>
+              <p>Only on book pages we feel freedom</p>
             </div>
           </div>
         </Link>

@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import EditModalWindow from "../components/books/EditModalWindow";
 import ClearIcon from "@mui/icons-material/Clear";
-
+import detecive from "../assets/img/detective.png";
 import { getBooks } from "../api/api";
 import { Categories, SortPopup } from "../components/index";
 import { useDispatch, useSelector } from "react-redux";
@@ -107,10 +107,21 @@ function Home() {
         </div>
       </div>
       <div className="content__items">
-        <BooksWrap data={searchBook(books.items)} cart={cart} />
+        {searchBook(books.items).length !== 0 ? (
+          <BooksWrap data={searchBook(books.items)} cart={cart} />
+        ) : (
+          <div className="container container--cart">
+            <div className="cart cart--empty">
+              <h2>
+                None books <icon>😕</icon>
+              </h2>
+              <img src={detecive} alt="Empty cart" />
+            </div>
+          </div>
+        )}
       </div>
       <EditModalWindow />
-      <CreateModalWindow/>
+      <CreateModalWindow />
     </div>
   );
 }
