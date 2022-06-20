@@ -54,7 +54,7 @@ export default function Header() {
     } else navigate("/cart");
   };
   React.useEffect(() => {
-    if (!moment(user.cancelData, moment.ISO_8601) > moment(moment(), moment.ISO_8601)) {
+    if ((moment(user.cancelData, moment.ISO_8601) < moment(moment(), moment.ISO_8601))) {
       refreshToken(user.userId).then((res) => dispatch(refreshedToken(res.data)));
     }
   }, []);

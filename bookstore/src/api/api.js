@@ -121,15 +121,17 @@ export const getOrdersByUser = (userId) => {
 };
 export const deleteBookRequest = async (book) => {
   return axios.delete(endpoint + "book/DeleteBook", {
-    Id: book.id,
-    Name: book.name,
-    Genre: book.genre,
-    Author: book.author,
-    Price: book.price,
-    Publishing: book.publishing,
-    AmountOnStore: book.amountOnStore,
-    Image: book.image,
-    Created: book.created,
+    data:{
+      Id: book.id,
+      Name: book.name,
+      Genre: book.genre,
+      Author: book.author,
+      Price: book.price,
+      Publishing: book.publishing,
+      AmountOnStore: book.amountOnStore,
+      Image: book.image,
+      Created: book.created,
+    }
   });
 };
 export const editBookRequest = async (book) => {

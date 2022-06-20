@@ -176,7 +176,7 @@ export default function EditModalWindow() {
       if (value === "") {
         return true;
       }
-      var regexp = /^[A-Za-z0-9 ]+$/;
+      var regexp = /^[A-Za-z0-9\s\-,\.;:()']+$/;
       if (value.match(regexp)) {
         return true;
       }

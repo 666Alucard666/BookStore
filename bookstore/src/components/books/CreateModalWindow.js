@@ -132,7 +132,7 @@ export default function CreateModalWindow() {
       if (value === "") {
         return true;
       }
-      var regexp = /^[A-Za-z0-9 ]+$/;
+      var regexp = /^[A-Za-z0-9\s\-,\.;:()']+$/;
       if (value.match(regexp)) {
         return true;
       }
@@ -223,7 +223,7 @@ export default function CreateModalWindow() {
               </Typography>
             </ModalHeader>
             <ModalBody>
-              <ValidatorForm onSubmit={handleCreateSubmit} className={classes.form}>
+              <ValidatorForm  className={classes.form}>
                 <div>
                   <Grid container direction="column" justifyContent="center" alignItems="center">
                     <Grid item className={classes.customInput}>
@@ -319,7 +319,7 @@ export default function CreateModalWindow() {
                     </Grid>
                     <div className={classes.root}>
                       <Button className="button--edit">
-                        <span className={classes.toggleButtonGroup}>Create</span>
+                        <span className={classes.toggleButtonGroup} onClick={handleCreateSubmit}>Create</span>
                       </Button>
                       <Button className="button--edit">
                         <span className={classes.toggleButtonGroup} onClick={handleExitSubmit}>
