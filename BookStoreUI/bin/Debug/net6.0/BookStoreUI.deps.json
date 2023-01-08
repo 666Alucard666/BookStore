@@ -18,6 +18,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.4",
           "Newtonsoft.Json": "13.0.1",
+          "Quartz.Extensions.DependencyInjection": "3.5.0",
+          "Quartz.Extensions.Hosting": "3.5.0",
           "Swashbuckle": "5.6.0",
           "Swashbuckle.AspNetCore.Swagger": "6.3.1",
           "Swashbuckle.AspNetCore.SwaggerGen": "6.3.1",
@@ -302,6 +304,19 @@
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {},
+      "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
+        }
+      },
       "Microsoft.Extensions.Logging/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
@@ -446,6 +461,45 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.2.22727"
+          }
+        }
+      },
+      "Quartz/3.5.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "System.Configuration.ConfigurationManager": "4.7.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.0"
+          }
+        }
+      },
+      "Quartz.Extensions.DependencyInjection/3.5.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
+          "Quartz": "3.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.0"
+          }
+        }
+      },
+      "Quartz.Extensions.Hosting/3.5.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting.Abstractions": "2.1.1",
+          "Quartz.Extensions.DependencyInjection": "3.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.Extensions.Hosting.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.0"
           }
         }
       },
@@ -657,6 +711,7 @@
       "BLL/1.0.0": {
         "dependencies": {
           "BLL.Abstractions": "1.0.0",
+          "Quartz": "3.5.0",
           "ceTe.DynamicPDF.CoreSuite.NET": "11.32.0",
           "iTextSharp": "5.5.13.3"
         },
@@ -883,6 +938,20 @@
       "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UEQB5/QPuLYaCvScZQ9llhcks5xyEUKh41D615FoehRAF9UgGVmXHcCSOH8idHHLRoKm+OJJjEy1oywvuaL33w==",
+      "path": "microsoft.extensions.fileproviders.abstractions/2.1.1",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kVVdHnOFJbcXxgZzrT6nwkrWZTHL+47LT59S9J2Jp0BNO3EQWNEZHUUZMb/kKFV7LtW+bp+EuAOPNUqEcqI++Q==",
+      "path": "microsoft.extensions.hosting.abstractions/2.1.1",
+      "hashPath": "microsoft.extensions.hosting.abstractions.2.1.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.Logging/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1008,6 +1077,27 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "Quartz/3.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tgWAByEvwWC/CE4VXfrMgt7h5FXdFKIl9Sf5X/0d4yq1rsvSgiVbcAPdFUFAgIOOTcLTtRXp1rXBGqHukIWAgQ==",
+      "path": "quartz/3.5.0",
+      "hashPath": "quartz.3.5.0.nupkg.sha512"
+    },
+    "Quartz.Extensions.DependencyInjection/3.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dlXLaHXTfI7hkAmoMtnB0j10RxFmESr0p8nyAvdvrWOb4vmeNMac39i4TUCmO2oqlDUhmbt/ZqDoQucOPkrvzg==",
+      "path": "quartz.extensions.dependencyinjection/3.5.0",
+      "hashPath": "quartz.extensions.dependencyinjection.3.5.0.nupkg.sha512"
+    },
+    "Quartz.Extensions.Hosting/3.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5to3zi9QFMjqRidmp+QvkdEDjozDiW0hUT8QZz0xsPK3mTZeJFXv35qSWCNb4wnw+XHT5e4WN9DnpN4qj6D3oA==",
+      "path": "quartz.extensions.hosting/3.5.0",
+      "hashPath": "quartz.extensions.hosting.3.5.0.nupkg.sha512"
     },
     "Swashbuckle/5.6.0": {
       "type": "package",

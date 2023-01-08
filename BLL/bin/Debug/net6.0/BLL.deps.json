@@ -9,6 +9,7 @@
       "BLL/1.0.0": {
         "dependencies": {
           "BLL.Abstractions": "1.0.0",
+          "Quartz": "3.5.0",
           "ceTe.DynamicPDF.CoreSuite.NET": "11.32.0",
           "iTextSharp": "5.5.13.3"
         },
@@ -303,6 +304,19 @@
             "assetType": "runtime",
             "assemblyVersion": "4.0.2.0",
             "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "Quartz/3.5.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "System.Configuration.ConfigurationManager": "4.7.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.0"
           }
         }
       },
@@ -708,6 +722,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "Quartz/3.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tgWAByEvwWC/CE4VXfrMgt7h5FXdFKIl9Sf5X/0d4yq1rsvSgiVbcAPdFUFAgIOOTcLTtRXp1rXBGqHukIWAgQ==",
+      "path": "quartz/3.5.0",
+      "hashPath": "quartz.3.5.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore.Swagger/6.3.1": {
       "type": "package",

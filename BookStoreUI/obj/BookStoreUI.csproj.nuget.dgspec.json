@@ -122,6 +122,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Quartz": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
             "ceTe.DynamicPDF.CoreSuite.NET": {
               "target": "Package",
               "version": "[11.32.0, )"
@@ -237,6 +241,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Quartz.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
+            "Quartz.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[3.5.0, )"
             },
             "Swashbuckle": {
               "target": "Package",

@@ -151,10 +151,10 @@ public class PersonService : IPersonService
             var page4 = new Page();
             document.Pages.Add(page4);
 
-            var label = new Label("TOP 10 popular products this month", 0, 50, 100, 30, Font.HelveticaBold, 16,
+            var label = new Label("TOP 10 popular products this month", 0, 50, 300, 30, Font.HelveticaBold, 16,
                 TextAlign.Center);
             page.Elements.Add(label);
-            var table = new Table2(-40, 200, 600, 1100);
+            var table = new Table2(-40, 100, 600, 1100);
 
             table.Columns.Add(150);
             table.Columns.Add(100);
@@ -177,7 +177,7 @@ public class PersonService : IPersonService
             var i = 1;
             foreach (var productDto in prod)
             {
-                table.Rows.Add(100);
+                table.Rows.Add(70);
                 table.Rows[i].Cells.Add(productDto.Name);
                 table.Rows[i].Cells.Add(productDto.Category);
                 table.Rows[i].Cells.Add(productDto.ProducingCompany);
@@ -189,10 +189,10 @@ public class PersonService : IPersonService
             }
 
             var shops = await _shopService.Get15MostPopularShops();
-            var label2 = new Label("TOP 15 popular shops this month", 0, 50, 100, 30, Font.HelveticaBold, 16,
+            var label2 = new Label("TOP 15 popular shops this month", 0, 50, 300, 30, Font.HelveticaBold, 16,
                 TextAlign.Center);
             page2.Elements.Add(label2);
-            var table2 = new Table2(-40, 200, 600, 1500);
+            var table2 = new Table2(-40, 100, 600, 1500);
 
             table2.Columns.Add(150);
             table2.Columns.Add(100);
@@ -211,7 +211,7 @@ public class PersonService : IPersonService
             var j = 1;
             foreach (var shop in shops)
             {
-                table2.Rows.Add(100);
+                table2.Rows.Add(70);
                 table2.Rows[j].Cells.Add(shop.Name);
                 table2.Rows[j].Cells.Add(shop.City);
                 table2.Rows[j].Cells.Add(shop.Address);
@@ -221,10 +221,10 @@ public class PersonService : IPersonService
             }
 
             var shopsCosts = await _shopService.Get15MostExpensiveShop();
-            var label3 = new Label("TOP 15 expensive shops this month", 0, 50, 100, 30, Font.HelveticaBold, 16,
+            var label3 = new Label("TOP 15 expensive shops this month", 0, 50, 300, 30, Font.HelveticaBold, 16,
                 TextAlign.Center);
             page3.Elements.Add(label3);
-            var table3 = new Table2(-40, 200, 600, 1500);
+            var table3 = new Table2(-40, 100, 600, 1500);
 
             table3.Columns.Add(150);
             table3.Columns.Add(100);
@@ -245,7 +245,7 @@ public class PersonService : IPersonService
             var k = 1;
             foreach (var shop in shopsCosts)
             {
-                table3.Rows.Add(100);
+                table3.Rows.Add(70);
                 table3.Rows[k].Cells.Add(shop.Shop.Name);
                 table3.Rows[k].Cells.Add(shop.Shop.City);
                 table3.Rows[k].Cells.Add(shop.Shop.Address);
@@ -256,9 +256,9 @@ public class PersonService : IPersonService
             }
 
             var popularCities = await _orderService.GetPopularRecipientCities();
-            var label4 = new Label("TOP 5 popular cities", 0, 50, 100, 30, Font.HelveticaBold, 16, TextAlign.Center);
+            var label4 = new Label("TOP 5 popular cities", 0, 50, 300, 30, Font.HelveticaBold, 16, TextAlign.Center);
             page4.Elements.Add(label4);
-            var table4 = new Table2(-40, 200, 300, 500);
+            var table4 = new Table2(-40, 100, 300, 500);
 
             table4.Columns.Add(150);
             table4.Columns.Add(100);
@@ -272,7 +272,7 @@ public class PersonService : IPersonService
             var m = 1;
             foreach (var city in popularCities)
             {
-                table4.Rows.Add(100);
+                table4.Rows.Add(60);
                 table4.Rows[m].Cells.Add(city.City);
                 table4.Rows[m].Cells.Add($"{city.Count}");
                 m++;

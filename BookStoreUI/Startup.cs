@@ -4,7 +4,9 @@ using DAL;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using BLL.Jobs;
 using Microsoft.OpenApi.Models;
+using Quartz;
 
 namespace BookStoreUI
 {
@@ -52,6 +54,19 @@ namespace BookStoreUI
                 }); ;
             });
             
+            services
+                .AddQuartz(q =>
+                {
+                    q.UseMicrosoftDependencyInjectionJobFactory();
+                    q.AddJob<SendStatisticJob>(config =>
+                    {
+                        config
+                            .WithIdentity(nameof(SendStatisticJob))
+                            .StoreDurably();
+                    });
+                })
+                .AddQuartzHostedService();
+
             services.AddControllers().AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;

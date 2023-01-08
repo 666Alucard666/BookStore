@@ -122,6 +122,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Quartz": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
             "ceTe.DynamicPDF.CoreSuite.NET": {
               "target": "Package",
               "version": "[11.32.0, )"

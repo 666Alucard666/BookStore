@@ -266,3 +266,6 @@ C:\Users\DVO\Coursach\BookStore\BookStoreUI\obj\Debug\net6.0\refint\BookStoreUI.
 C:\Users\DVO\Coursach\BookStore\BookStoreUI\obj\Debug\net6.0\BookStoreUI.pdb
 C:\Users\DVO\Coursach\BookStore\BookStoreUI\obj\Debug\net6.0\BookStoreUI.genruntimeconfig.cache
 C:\Users\DVO\Coursach\BookStore\BookStoreUI\obj\Debug\net6.0\ref\BookStoreUI.dll
+C:\Users\DVO\Coursach\BookStore\BookStoreUI\bin\Debug\net6.0\Quartz.dll
+C:\Users\DVO\Coursach\BookStore\BookStoreUI\bin\Debug\net6.0\Quartz.Extensions.DependencyInjection.dll
+C:\Users\DVO\Coursach\BookStore\BookStoreUI\bin\Debug\net6.0\Quartz.Extensions.Hosting.dll

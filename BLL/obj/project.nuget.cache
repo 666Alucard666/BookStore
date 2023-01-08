@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V51OTHSKrNdmkGlFlQqMlhVpb3PCfezc1EFw37zbixBvRDa+5wmZSPE3rpZwlDUnkto1OJtBr33e0egCXpiprQ==",
+  "dgSpecHash": "tTe/EocD3D2h/UrwlIaw8+3/tcGtj1N0d6icuU3OUvIg4PkmWgVEiwY/Ci+dOSG4Z345sKfNjyD6T2WzuQlBXQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\quartz\\3.5.0\\quartz.3.5.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
