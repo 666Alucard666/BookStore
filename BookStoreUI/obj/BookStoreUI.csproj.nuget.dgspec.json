@@ -1,21 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LearningRepos\\BookStore\\BookStoreUI\\BookStoreUI.csproj": {}
+    "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\BookStoreUI.csproj": {}
   },
   "projects": {
-    "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
+    "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj",
+        "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj",
         "projectName": "BLL.Abstractions",
-        "projectPath": "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj",
+        "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj",
         "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-        "outputPath": "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\obj\\",
+        "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-          "D:\\ToolboxNuGetPackages"
+          "D:\\ToolboxNuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,8 +35,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj"
+              "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj"
+              },
+              "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj"
               }
             }
           }
@@ -71,18 +75,19 @@
         }
       }
     },
-    "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj": {
+    "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj",
+        "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj",
         "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-        "outputPath": "D:\\LearningRepos\\BookStore\\BLL\\obj\\",
+        "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-          "D:\\ToolboxNuGetPackages"
+          "D:\\ToolboxNuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,11 +106,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj"
-              },
-              "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj"
+              "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj"
               }
             }
           }
@@ -151,18 +153,19 @@
         }
       }
     },
-    "D:\\LearningRepos\\BookStore\\BookStoreUI\\BookStoreUI.csproj": {
+    "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\BookStoreUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LearningRepos\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
+        "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
         "projectName": "BookStoreUI",
-        "projectPath": "D:\\LearningRepos\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
+        "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
         "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-        "outputPath": "D:\\LearningRepos\\BookStore\\BookStoreUI\\obj\\",
+        "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-          "D:\\ToolboxNuGetPackages"
+          "D:\\ToolboxNuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -181,14 +184,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj"
+              "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj"
               },
-              "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj"
+              "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj"
               },
-              "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj"
+              "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj"
               }
             }
           }
@@ -274,18 +277,19 @@
         }
       }
     },
-    "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
+    "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-        "outputPath": "D:\\LearningRepos\\BookStore\\Core\\obj\\",
+        "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-          "D:\\ToolboxNuGetPackages"
+          "D:\\ToolboxNuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -343,85 +347,19 @@
         }
       }
     },
-    "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj": {
+    "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
-        "projectName": "DAL.Abstractions",
-        "projectPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
-        "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-        "outputPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-          "D:\\ToolboxNuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-        "outputPath": "D:\\LearningRepos\\BookStore\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-          "D:\\ToolboxNuGetPackages"
+          "D:\\ToolboxNuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -440,11 +378,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj"
-              },
-              "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj": {
-                "projectPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj"
+              "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj"
               }
             }
           }

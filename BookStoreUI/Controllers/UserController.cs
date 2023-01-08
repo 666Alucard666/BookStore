@@ -37,17 +37,13 @@ namespace BookStoreUI.Controllers
             {
                 return BadRequest("User was not found");
             }
-            var res = new UserAfterLogin
-            {
-                UserId = user.UserId,
-                Token = GenerateJwtToken(user.UserId),
-                CancelDate = DateTime.UtcNow.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ss"),
-                Role = user.Role,
-            };
-            return Ok(res);
+
+            user.Token = GenerateJwtToken(user.UserId);
+            user.CancelDate = DateTime.UtcNow.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ss");
+            return Ok(user);
         }
 
-        private string GenerateJwtToken(int id)
+        private string GenerateJwtToken(Guid id)
         {
             List<Claim> claims = new List<Claim>
             {
@@ -73,9 +69,8 @@ namespace BookStoreUI.Controllers
         public async Task<ActionResult<bool>> Register([FromBody] UserDTO user)
         {
             if (user == null
-                || string.IsNullOrWhiteSpace(user.UserName)
+                || string.IsNullOrWhiteSpace(user.Name)
                 || string.IsNullOrWhiteSpace(user.Email)
-                || string.IsNullOrWhiteSpace(user.PhoneNumber)
                 || string.IsNullOrWhiteSpace(user.Password)) // check if any values are null or empty
             {
                 return BadRequest("User values can't be empty");
@@ -90,7 +85,7 @@ namespace BookStoreUI.Controllers
 
         [HttpGet]
         [Route("RefreshToken")]
-        public async Task<ActionResult> RefreshToken(int userId)
+        public async Task<ActionResult> RefreshToken(Guid userId)
         {
             return Ok(new
             {

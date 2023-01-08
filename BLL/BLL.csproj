@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BLL.Abstractions\BLL.Abstractions.csproj" />
-    <ProjectReference Include="..\DAL.Abstractions\DAL.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>

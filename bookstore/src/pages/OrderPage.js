@@ -5,7 +5,7 @@ import { getOrdersByUser } from "../api/api";
 import OrderBooksPopup from "../components/OrderBooksPopup";
 import { signOut } from "../state/actions/authentification";
 import emptyCard from "../assets/img/empty-cart.png";
-import { createReceipt } from "./../api/api";
+import { createReceipt, deleteOrder } from "./../api/api";
 import Button from "./../components/Button";
 
 export default function OrderPage() {
@@ -30,7 +30,7 @@ export default function OrderPage() {
   const getReceipt = (id) => {
     createReceipt(id);
   };
-
+  
   return (
     <div className="container">
       <div className="main-content">
@@ -44,27 +44,30 @@ export default function OrderPage() {
             return (
               <li className="orderFrame">
                 <ul>
-                  <li className="number">№{o.orderNumber}</li>
+                  <li className="number">№{o.orderId}</li>
                   <li>
                     <img
-                      src={books.items.find((b) => b.id === o.ordersBook[0].bookId)?.image}
+                      src={books.items.find((b) => b.productId === o.orderProducts[0]?.productId)?.image}
                       className="bookOrderImage"
                     />
                   </li>
                   <li>
-                    <span className="info">{o.recipient}</span>
+                    <span className="info">{o.recipientName}</span>
                   </li>
                   <li>
-                    <span className="info">{o.adress}</span>
+                    <span className="info">{o.recipientAddress}</span>
                   </li>
                   <li>
-                    <OrderBooksPopup books={books.items} orderBooks={o.ordersBook} />
+                    <OrderBooksPopup books={books.items} orderBooks={o.orderProducts} />
                   </li>
                   <li>
                     <span className="info">{o.sum.toFixed(2)}$</span>
                   </li>
                   <li>
                     <Button onClick={() => getReceipt(o.orderId)}>Generate receipt</Button>
+                  </li>
+                  <li>
+                    <Button onClick={() => deleteOrder(o.orderId)}>Delete order</Button>
                   </li>
                 </ul>
               </li>

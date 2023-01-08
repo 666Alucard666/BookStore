@@ -900,7 +900,6 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "BLL.Abstractions": "1.0.0",
-          "DAL.Abstractions": "1.0.0",
           "ceTe.DynamicPDF.CoreSuite.NET": "11.32.0",
           "iTextSharp": "5.5.13.3"
         },
@@ -918,7 +917,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Core": "1.0.0"
+          "Core": "1.0.0",
+          "DAL": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BLL.Abstractions.dll": {}
@@ -951,7 +951,6 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Core": "1.0.0",
-          "DAL.Abstractions": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.2",
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.2",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.2",
@@ -962,22 +961,6 @@
         },
         "runtime": {
           "bin/placeholder/DAL.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "DAL.Abstractions/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DAL.Abstractions.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DAL.Abstractions.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -2651,11 +2634,6 @@
       "type": "project",
       "path": "../DAL/DAL.csproj",
       "msbuildProject": "../DAL/DAL.csproj"
-    },
-    "DAL.Abstractions/1.0.0": {
-      "type": "project",
-      "path": "../DAL.Abstractions/DAL.Abstractions.csproj",
-      "msbuildProject": "../DAL.Abstractions/DAL.Abstractions.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2679,20 +2657,22 @@
   "packageFolders": {
     "C:\\Users\\DVO\\.nuget\\packages\\": {},
     "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages": {},
-    "D:\\ToolboxNuGetPackages": {}
+    "D:\\ToolboxNuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LearningRepos\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
+      "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
       "projectName": "BookStoreUI",
-      "projectPath": "D:\\LearningRepos\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
+      "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
       "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-      "outputPath": "D:\\LearningRepos\\BookStore\\BookStoreUI\\obj\\",
+      "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-        "D:\\ToolboxNuGetPackages"
+        "D:\\ToolboxNuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2711,14 +2691,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
-              "projectPath": "D:\\LearningRepos\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj"
+            "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj": {
+              "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL.Abstractions\\BLL.Abstractions.csproj"
             },
-            "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\LearningRepos\\BookStore\\BLL\\BLL.csproj"
+            "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\BLL\\BLL.csproj"
             },
-            "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj"
+            "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj"
             }
           }
         }

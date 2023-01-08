@@ -3,17 +3,18 @@ using System.Text.RegularExpressions;
 using BLL.Abstractions.ServiceInterfaces;
 using BLL.Infrastructure;
 using Core.DTO_Models;
-using Core.Models;
-using DAL.Abstractions.Interfaces;
+using DAL;
+using DAL.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BLL.Services;
 public class UserService : IUserService
 {
-    private IUnitOfWork _unitOfWork;
+    private readonly GigienaStoreDbContext _context;
 
-    public UserService(IUnitOfWork work)
+    public UserService(GigienaStoreDbContext context)
     {
-        _unitOfWork = work;
+        _context = context;
     }
     public async Task<bool> RegisterAsync(UserDTO user)
     {
@@ -35,65 +36,91 @@ public class UserService : IUserService
             return false;
         }
 
-        if (await _unitOfWork.UserRepository.Any(us=> us.Email == user.Email ||
-            user.UserName == us.Username || us.PhoneNumber == user.PhoneNumber))
+        if (await _context.Users.AnyAsync(us=> us.Email == user.Email))
         {
             return false;
         }
+
+        var userId = Guid.NewGuid();
         var crUser = new User
         {
+            UserId = userId,
             Email = user.Email,
-            Username = user.UserName,
-            Password = user.Password,
-            PhoneNumber = user.PhoneNumber,
-            Name = user.Name,
-            Surname = user.Surname,
-            Role = user.Role,
-            Orders = new List<Order>(),
+            HashPassword = PasswordHasher.HashPassword(user.Password)
         };
-        crUser.Password = PasswordHasher.HashPassword(crUser.Password);
-        using (_unitOfWork.BeginTransactionAsync())
-        {
-            try
-            { 
-                _unitOfWork.UserRepository.Create(crUser);
-                await _unitOfWork.SaveAsync();
-                    
-                await _unitOfWork.CommitTransactionAsync();
-            }
-            catch 
-            {
-                await _unitOfWork.RollbackTransactionAsync();
-            }
-        }
 
-        return true;
+        try
+        {
+            if (user.Specialty == "Customer")
+            {
+                var customer = new Customer
+                {
+                    CustomerId = userId,
+                    Name = user.Name,
+                    Surname = user.Surname,
+                    MiddleName = user.MiddleName,
+                    Sex = user.Sex,
+                    Dob = user.Dob,
+                    Dor = DateTime.Now,
+                    City = user.City,
+                    Address = user.Address,
+                    Zip = user.Zip.Value,
+                    Phone = user.Phone
+                };
+                await _context.Customers.AddAsync(customer);
+            }
+            else
+            {
+                var worker = new Worker
+                {
+                    WorkerId = userId,
+                    Name = user.Name,
+                    Surname = user.Surname,
+                    MiddleName = user.MiddleName,
+                    Sex = user.Sex,
+                    Dob = user.Dob,
+                    City = user.City,
+                    Address = user.Address,
+                    Specialty = user.Specialty,
+                    Salary = user.Salary.Value,
+                    ShopId = user.ShopId
+                };
+                await _context.Workers.AddAsync(worker);
+            }
+            await _context.Users.AddAsync(crUser);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return false;
+        }
     }
 
-    public async Task<User> SignInAsync(string username, string password)
+    public async Task<UserAfterLogin> SignInAsync(string username, string password)
     {
         var passwordRegex = new Regex(@"(?=.*[0-9])(?=.*[a-zA-Z])(?=([\x21-\x7e]+)[^a-zA-Z0-9]).{8,24}",
             RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace);
 
-        if (!passwordRegex.IsMatch(password)) // check if password is strong
+        var foundUser = await _context.Users.Include(x => x.Customer).Include(x => x.Worker).FirstOrDefaultAsync(x => x.Email == username);
+
+        if (foundUser is null)
+        {
+            return null;
+        }
+
+        var result = new UserAfterLogin
+        {
+            UserId = foundUser.UserId,
+            Role = foundUser.Customer is null ? foundUser.Worker.Specialty : "Customer"
+        };
+        
+        if (!passwordRegex.IsMatch(password) || !PasswordHasher.VerifyHashedPassword(foundUser.HashPassword, password)) // check if password is strong
         {
             throw new ValidationException("Incorrect password", "Password");
         }
 
-        if (!await _unitOfWork.UserRepository.Any())
-        {
-            return null;
-        }
-
-        User foundUser = null;
-        foundUser = _unitOfWork.UserRepository.FirstOrDefault(u => u.Username == username);
-
-        if (foundUser == null
-            || !PasswordHasher.VerifyHashedPassword(foundUser.Password, password))
-        {
-            return null;
-        }
-
-        return foundUser;
+        return result;
     }
 }

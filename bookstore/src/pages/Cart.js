@@ -15,9 +15,13 @@ import {
 } from "../state/actions/cartAction";
 import emptyCard from "../assets/img/empty-cart.png";
 import { Button } from "../components";
-import { postOrder } from "../api/api";
+import { postOrder, getCustomerById, getShopsByCity } from "../api/api";
 import { signOut } from "../state/actions/authentification";
 import { useNavigate } from "react-router-dom";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
+import { Box, Checkbox, FormControl, Typography } from "@mui/material";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -38,6 +42,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const paymentTypes = ["Cash", "Credit card", "Crypto"];
+
 function Cart() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -46,16 +52,42 @@ function Cart() {
   const books = Object.keys(cart.items).map((k) => {
     return cart.items[k].items[0];
   });
+  const [customer, setCustomer] = React.useState({});
+  const [shops, setShops] = React.useState([]);
   const navigate = useNavigate();
+  const [intoShop, setIntoShop] = React.useState(false);
   const userId = useSelector((state) => state.account.userId);
   const [orderData, setOrderData] = React.useState({
-    phoneNumber: "",
-    adress: "",
-    userId: userId,
-    recipient: "",
+    recipientPhone: "",
+    customerId: userId,
+    recipientName: "",
+    recipientSurname: "",
+    recipientCity: "",
+    recipientAdress: "",
     sum: cart.totalPrice,
-    books: [],
+    shopId: null,
+    paymentType: paymentTypes[0],
+    productsList: [],
   });
+
+  React.useEffect(() => {
+    getCustomerById(userId).then((res) => {
+      setCustomer(res.data);
+      setOrderData({
+        ...orderData,
+        recipientPhone: res.data.phone,
+        recipientName: res.data.name,
+        recipientSurname: res.data.surname,
+        recipientCity: res.data.city,
+        recipientAdress: res.data.address,
+      });
+    });
+  }, [userId]);
+
+  React.useEffect(() => {
+    getShopsByCity(orderData.recipientCity).then((res) => setShops(res.data));
+  }, [orderData.recipientCity]);
+
   const handleClearCart = () => {
     if (window.confirm("Do you really want clear your cart?")) {
       dispatch(clearCart());
@@ -75,20 +107,20 @@ function Cart() {
   const onMinusItem = (id) => {
     dispatch(minusCartItem(id));
   };
-  const onOpen =(event)=>{
+  const onOpen = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
     setOrderData({
       ...orderData,
-      books: books.map((b) => {
+      productsList: books.map((b) => {
         return {
-          book: b,
-          count: cart.items[b.id].items.length,
+          productId: b.productId,
+          count: cart.items[b.productId].items.length,
         };
       }),
     });
-    setOpen(true)
+    setOpen(true);
   };
   const onClickOrder = async (event) => {
     event.preventDefault();
@@ -105,12 +137,16 @@ function Cart() {
         if (res.status === 200) {
           dispatch(clearCart());
           setOrderData({
-            phoneNumber: "",
-            adress: "",
-            userId: userId,
-            recipient: "",
+            recipientPhone: "",
+            customerId: userId,
+            recipientName: "",
+            recipientSurname: "",
+            recipientCity: "",
+            recipientAdress: "",
             sum: cart.totalPrice,
-            books: [],
+            shopId: null,
+            paymentType: paymentTypes[0],
+            productsList: [],
           });
           navigate("/home");
         }
@@ -120,7 +156,18 @@ function Cart() {
     setOrderData({ ...orderData, [event.target.name]: event.target.value });
   };
   const handleClose = () => {
-    setOrderData({ ...orderData, phoneNumber: "", adress: "", recipient: "" });
+    setOrderData({
+      recipientPhone: "",
+      customerId: userId,
+      recipientName: "",
+      recipientSurname: "",
+      recipientCity: "",
+      recipientAdress: "",
+      sum: cart.totalPrice,
+      shopId: null,
+      paymentType: paymentTypes[0],
+      productsList: [],
+    });
     setOpen(false);
   };
 
@@ -222,8 +269,8 @@ function Cart() {
                 return (
                   <CartItem
                     book={book}
-                    totalCount={cart.items[book.id].items.length}
-                    totalPrice={cart.items[book.id].totalPrice.toFixed(2)}
+                    totalCount={cart.items[book.productId].items.length}
+                    totalPrice={cart.items[book.productId].totalPrice.toFixed(2)}
                     onRemove={onRemoveItem}
                     onMinus={onMinusItem}
                     onPlus={onPlusItem}
@@ -238,11 +285,11 @@ function Cart() {
                       <Grid item className={classes.customInput}>
                         <TextValidator
                           label="Phone number"
-                          name="phoneNumber"
+                          name="recipientPhone"
                           size="small"
                           onChange={handleChange}
                           variant="outlined"
-                          value={orderData.phoneNumber}
+                          value={orderData.recipientPhone}
                           margin="normal"
                           validators={["required", "isPhoneNumber"]}
                           errorMessages={["RequiredField", "Invalid phone number"]}
@@ -250,26 +297,88 @@ function Cart() {
                       </Grid>
                       <Grid item className={classes.customInput}>
                         <TextValidator
-                          label="Adress"
-                          name="adress"
+                          label="Recipient name"
+                          name="recipientName"
                           size="small"
                           onChange={handleChange}
                           variant="outlined"
-                          value={orderData.adress}
+                          value={orderData.recipientName}
                           margin="normal"
                         />
                       </Grid>
                       <Grid item className={classes.customInput}>
                         <TextValidator
-                          label="Recipient"
-                          name="recipient"
+                          label="Recipient surname"
+                          name="recipientSurname"
                           size="small"
                           onChange={handleChange}
                           variant="outlined"
-                          value={orderData.recipient}
+                          value={orderData.recipientSurname}
                           margin="normal"
                         />
                       </Grid>
+                      <Grid item className={classes.customInput}>
+                        <TextValidator
+                          label="Recipient city"
+                          name="recipientCity"
+                          size="small"
+                          onChange={handleChange}
+                          variant="outlined"
+                          value={orderData.recipientCity}
+                          margin="normal"
+                        />
+                      </Grid>
+                      <Grid item className={classes.customInput}>
+                        <TextValidator
+                          label="Recipient address"
+                          name="recipientAdress"
+                          size="small"
+                          onChange={handleChange}
+                          variant="outlined"
+                          value={orderData.recipientAdress}
+                          margin="normal"
+                        />
+                      </Grid>
+                      <Box sx={{ minWidth: 250, marginTop: "10px" }}>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Payment type</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            value={orderData.paymentType}
+                            name="paymentType"
+                            onChange={handleChange}
+                            size="small">
+                            {paymentTypes.map((type) => (
+                              <MenuItem value={type}>{type}</MenuItem>
+                            ))}
+                          </Select>
+                        </FormControl>
+                      </Box>
+                      <Typography>Use shop for shipping:</Typography>
+                      <Checkbox
+                        checked={intoShop}
+                        onChange={(event) => setIntoShop(event.target.checked)}></Checkbox>
+                      {intoShop && (
+                        <Box sx={{ minWidth: 250, marginBottom: "10px"}}>
+                          <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">Shops</InputLabel>
+                            <Select
+                              labelId="demo-simple-select-label"
+                              value={orderData.shopId}
+                              name="shopId"
+                              onChange={handleChange}
+                              size="small">
+                              {shops.length === 0 ? (
+                                <MenuItem value={null}>None</MenuItem>
+                              ) : (
+                                shops.map((shop) => (
+                                  <MenuItem value={shop.shopId}>{shop.name}</MenuItem>
+                                ))
+                              )}
+                            </Select>
+                          </FormControl>
+                        </Box>
+                      )}
                     </Grid>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
                       <Button onClick={handleClose}>Cancel</Button>
@@ -285,7 +394,7 @@ function Cart() {
               <div className="cart__bottom-details">
                 <span>
                   {" "}
-                  Total books: <b>{cart.totalCount} pc.</b>{" "}
+                  Total products: <b>{cart.totalCount} pc.</b>{" "}
                 </span>
                 <span>
                   {" "}
@@ -324,7 +433,7 @@ function Cart() {
                 Empty cart <icon>😕</icon>
               </h2>
               <p>
-                Seems like u haven't added books yet
+                Seems like u haven't added products yet
                 <br />
                 Comeback to main page for resolve this.
               </p>

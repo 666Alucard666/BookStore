@@ -1,53 +1,131 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CircularProgress from "@mui/material/CircularProgress";
 import moment from "moment";
 
 import { addBooksToCart } from "../state/actions/cartAction";
-import { getBooksDescription } from "../api/api";
 
 export default function BookPage() {
-  const book = useSelector((state) => state.books.currentBook);
+  const product = useSelector((state) => state.books.currentBook);
   const cart = useSelector((state) => state.cart);
-  const [description, setDescription] = React.useState("");
-  const [loading, setLoading] = React.useState(true);
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(addBooksToCart(book));
+    dispatch(addBooksToCart(product));
   };
-  getBooksDescription(book.name, book.author).then((res) => {
-    setDescription(res);
-    setLoading(false);
-  });
-  const count = cart.items[book.id] && cart.items[book.id].items.length;
+  const count = cart.items[product.id] && cart.items[product.id].items.length;
   return (
     <div className="container">
       <div className="main-content">
         <div className="main-content__image">
-          <img class="rectangle-3" src={book.image} />
+          <img class="rectangle-3" src={product.image} />
         </div>
         <div className="main-content__info">
-          <h1>{book.name}</h1>
+          <h1>{product.name}</h1>
           <ul className="info-list">
             <li>
-              <b className="infoLabel">Author:</b>&nbsp;
-              <span className="info">{book.author}</span>
+              <b className="infoLabel">Company:</b>&nbsp;
+              <span className="info">{product.producingCompany}</span>
             </li>
             <li>
-              <b className="infoLabel">Genre:</b>&nbsp;
-              <span className="info">{book.genre}</span>
+              <b className="infoLabel">Category:</b>&nbsp;
+              <span className="info">{product.category}</span>
             </li>
             <li>
-              <b className="infoLabel">Publishing:</b>&nbsp;
-              <span className="info">{book.publishing}</span>
+              <b className="infoLabel">Country:</b>&nbsp;
+              <span className="info">{product.producingCountry}</span>
             </li>
             <li>
-              <b className="infoLabel">Added:</b>&nbsp;
-              <span className="info">{moment(book.created).format("MMMM Do YYYY")}</span>
+              <b className="infoLabel">Produced:</b>&nbsp;
+              <span className="info">{moment(product.producingDate).format("MMMM Do YYYY")}</span>
             </li>
             <li>
-              <b className="infoLabel">Description:</b>&nbsp;
-              <div className="bookDescription">{loading ? <CircularProgress /> : description}</div>
+              <b className="infoLabel">Capacity:</b>&nbsp;
+              <span className="info">{`${product.capacity}g`}</span>
+            </li>
+            <li>
+              <b className="infoLabel">Gender:</b>&nbsp;
+              <span className="info">{product.gender}</span>
+            </li>
+            <li>
+              <b className="infoLabel">Contraindications:</b>&nbsp;
+              <span className="info">{product.contraindication}</span>
+            </li>
+            <li>
+              <b className="infoLabel">Instruction:</b>&nbsp;
+              <div className="bookDescription">{product.instruction}</div>
+            </li>
+            <li>
+              <b className="infoLabel">Additional info:</b>&nbsp;
+              <ul className="info-list">
+                {product.category === "Skin" && (
+                  <>
+                    <li>
+                      <b className="infoLabel">For skin:</b>&nbsp;
+                      <span className="info">{product.skinCareProduct.skinType}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Use purpose:</b>&nbsp;
+                      <span className="info">{product.skinCareProduct.usePurpose}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Age restrictions:</b>&nbsp;
+                      <span className="info">{`${product.skinCareProduct.ageRestrictionsStart} - ${product.skinCareProduct.ageRestrictionsEnd}`}</span>
+                    </li>
+                  </>
+                )}
+                {product.category === "Oral" && (
+                  <>
+                    <li>
+                      <b className="infoLabel">Gum disease:</b>&nbsp;
+                      <span className="info">{product.oralCavityProduct.gumDiseaseType}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Whitening:</b>&nbsp;
+                      <span className="info">{product.oralCavityProduct.ssWhitening}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">On herbal base:</b>&nbsp;
+                      <span className="info">{product.oralCavityProduct.isHerbalBase}</span>
+                    </li>
+                  </>
+                )}
+                {product.category === "Hair" && (
+                  <>
+                    <li>
+                      <b className="infoLabel">For hair:</b>&nbsp;
+                      <span className="info">{product.hairCareProduct.hairType}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Hair disease:</b>&nbsp;
+                      <span className="info">{product.hairCareProduct.hairDisease}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Anti dandruff:</b>&nbsp;
+                      <span className="info">{product.hairCareProduct.isAntiDandruff}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Not contains:</b>&nbsp;
+                      <span className="info">{product.hairCareProduct.notContains}</span>
+                    </li>
+                  </>
+                )}
+                {product.category === "Nails" && (
+                  <>
+                    <li>
+                      <b className="infoLabel">For nails:</b>&nbsp;
+                      <span className="info">{product.nailsCareProduct.nailsType}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Nails disease:</b>&nbsp;
+                      <span className="info">{product.nailsCareProduct.nailsDisease}</span>
+                    </li>
+                    <li>
+                      <b className="infoLabel">Fragrance:</b>&nbsp;
+                      <span className="info">{product.nailsCareProduct.fragnance}</span>
+                    </li>
+                  </>
+                )}
+              </ul>
+
             </li>
           </ul>
         </div>
@@ -55,7 +133,7 @@ export default function BookPage() {
       <div className="navigation">
         <div className="navigation__price">
           <b className="infoLabel price">Price:</b>&nbsp;
-          <span className="info price">{book.price}$</span>
+          <span className="info price">{product.price}$</span>
         </div>
         <div className="navigation__buttons">
           <div className="button button--outline button--add" onClick={() => handleClick()}>

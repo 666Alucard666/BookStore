@@ -1,7 +1,6 @@
 ﻿using BLL.Abstractions.ServiceInterfaces;
 using BLL.Services;
 using DAL;
-using DAL.Abstractions.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -13,11 +12,12 @@ namespace BookStoreUI
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>();
+            services.AddDbContext<GigienaStoreDbContext>();
             services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IBookService, BookService>();
             services.AddTransient<IOrderService, OrderService>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IPersonService, PersonService>();
+            services.AddTransient<IShopService, ShopService>();
+            services.AddTransient<IProductService, ProductService>();
             services.AddCors();
             services.AddSwaggerGen(c =>
             {

@@ -1,5 +1,5 @@
-export const setBooks = (items) => ({
-  type: "SET_BOOKS",
+export const setProducts = (items) => ({
+  type: "SET_PRODUCTS",
   payload: items,
 });
 export const setFilteredBooks = (items) => ({
@@ -15,8 +15,8 @@ export const sortBooksPrice = () => ({
 export const sortBooksDate = () => ({
   type: "SORT_BOOKS_DATE",
 });
-export const pickBook = (book) => ({
-  type: "CHOOSE_BOOK",
+export const pickProduct = (book) => ({
+  type: "CHOOSE_PRODUCT",
   payload: book,
 });
 export const deleteBook = (book) => ({

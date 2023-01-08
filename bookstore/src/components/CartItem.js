@@ -3,15 +3,15 @@ import Button from "./Button";
 
 export default function CartItem({ book, totalPrice, totalCount, onRemove, onMinus, onPlus }) {
   const handleRemoveClick = () => {
-    onRemove(book.id);
+    onRemove(book.productId);
   };
 
   const handlePlusItem = () => {
-    onPlus(book.id);
+    onPlus(book.productId);
   };
 
   const handleMinusItem = () => {
-    onMinus(book.id);
+    onMinus(book.productId);
   };
   return (
     <div className="cart__item">

@@ -9,7 +9,7 @@ const initialState = {
 
 const bookReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case "SET_BOOKS":
+    case "SET_PRODUCTS":
       return {
         ...initialState,
         items: payload.sort(function (a, b) {
@@ -27,15 +27,6 @@ const bookReducer = (state = initialState, { type, payload }) => {
               return -1;
             }
             if (a.price > b.price) {
-              return 1;
-            }
-            return 0;
-          }
-          if (state.sorting === "Date") {
-            if (a.created > b.created) {
-              return -1;
-            }
-            if (a.created < b.created) {
               return 1;
             }
             return 0;
@@ -122,7 +113,7 @@ const bookReducer = (state = initialState, { type, payload }) => {
         }),
         sorting: "Date",
       };
-    case "CHOOSE_BOOK":
+    case "CHOOSE_PRODUCT":
       return {
         ...initialState,
         items: state.items,

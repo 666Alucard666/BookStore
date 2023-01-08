@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TkWXIjrQ975bQmcrGeATr41secCGZmxHfog/c4f6WKQyylqnKNGS4si87whZjgoXv8FVd2uVN0X6ySdcDUY+Fg==",
+  "dgSpecHash": "ymdTroomT3T/KHLav4LNwHe40uDCs19nTgy+HTLUNGddhvp3OhsessRv9MZE84WDmne+vwqKgEJWiDMy5NIFJA==",
   "success": true,
-  "projectFilePath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512"

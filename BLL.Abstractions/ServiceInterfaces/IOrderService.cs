@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ceTe.DynamicPDF;
+﻿using ceTe.DynamicPDF;
 using Core.DTO_Models;
-using Core.Models;
+using DAL.Models;
 
 namespace BLL.Abstractions.ServiceInterfaces
 {
@@ -13,8 +8,10 @@ namespace BLL.Abstractions.ServiceInterfaces
     {
         Task<bool> MakeOrder(OrderDTO order);
         Task<bool> DeleteOrder(DeleteOrderRequest order);
-        Task<Order> GetOrderByNumber(int number);
-        IEnumerable<Order> GetAllOrdersByUser(int userId);
-        Task<Document> CreateReceipt(int id);
+        Task<Order> GetOrderByNumber(Guid number);
+        Task<IEnumerable<Order>> GetAllOrdersByCustomer(Guid id);
+        Task<IEnumerable<Order>> GetAllOrdersByShop(Guid shopId);
+        Task<Document> CreateAndSendReceipt(Guid id);
+        Task<IEnumerable<OrderCities>> GetPopularRecipientCities();
     }
 }

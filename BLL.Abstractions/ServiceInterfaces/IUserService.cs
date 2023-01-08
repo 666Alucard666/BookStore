@@ -1,16 +1,9 @@
 ﻿using Core.DTO_Models;
-using Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BLL.Abstractions.ServiceInterfaces
 {
     public interface IUserService
     {
         Task<bool> RegisterAsync(UserDTO user);
-        Task<User> SignInAsync(string username, string password);
+        Task<UserAfterLogin> SignInAsync(string username, string password);
     }
 }

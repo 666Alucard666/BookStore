@@ -3,35 +3,25 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteBookRequest } from "../../api/api";
-import { deleteBook, pickBook } from "../../state/actions/booksAction";
+import { deleteBook, pickProduct } from "../../state/actions/booksAction";
 import { addBooksToCart } from "../../state/actions/cartAction";
 
-export default function BookBlock({ book, addedCount }) {
+export default function BookBlock({ product, addedCount }) {
   const dispatch = useDispatch();
   const role = useSelector((state) => state.account?.role);
   const navigate = useNavigate();
   const handleClick = () => {
-    dispatch(addBooksToCart(book));
+    dispatch(addBooksToCart(product));
   };
   const handleImageClick = () => {
-    dispatch(pickBook(book));
-    navigate("/bookPage");
+    dispatch(pickProduct(product));
+    navigate("/productPage");
   };
-  const handleDeleteClick = () => {
-    dispatch(deleteBook(book));
-    deleteBookRequest(book);
-  };
-  const handleUpdateClick = () => {
-    dispatch({
-      type: "ACTION_WITH_MODAL",
-      payload: true,
-    });
-    dispatch(pickBook(book));
-  };
+  
   return (
     <div className="pizza-block">
-      <img className="pizza-block__image" src={book.image} alt="Book" onClick={handleImageClick} />
-      <h4 className="pizza-block__title">{book.name}</h4>
+      <img className="pizza-block__image" src={product.image} alt="Book" onClick={handleImageClick} />
+      <h4 className="pizza-block__title">{`${product.name.substring(0, 20)}...`}</h4>
       <div className="pizza-block__selector">
         <Typography
           alignContent={"center"}
@@ -39,7 +29,7 @@ export default function BookBlock({ book, addedCount }) {
           variant="h5"
           fontWeight={600}
           fontSize={14}>
-          {book.author}
+          {product.producingCompany}
         </Typography>
         <Typography
           alignContent={"center"}
@@ -47,11 +37,19 @@ export default function BookBlock({ book, addedCount }) {
           variant="h5"
           fontWeight={600}
           fontSize={14}>
-          {book.genre}
+          {product.category}
+        </Typography>
+        <Typography
+          alignContent={"center"}
+          component="h3"
+          variant="h5"
+          fontWeight={600}
+          fontSize={14}>
+          {product.producingCountry}
         </Typography>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">{`${book.price}$`}</div>
+        <div className="pizza-block__price">{`${product.price}$`}</div>
         <div className="button button--outline button--add" onClick={() => handleClick()}>
           <svg
             width="12"
@@ -68,18 +66,6 @@ export default function BookBlock({ book, addedCount }) {
           {addedCount && <i>{addedCount}</i>}
         </div>
       </div>
-      {role === "Admin" ? (
-        <div className="block">
-          <div className="buttonDelete" onClick={handleDeleteClick}>
-            <span>Delete</span>
-          </div>
-          <div className="buttonUpdate" onClick={handleUpdateClick}>
-            <span>Update</span>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 }

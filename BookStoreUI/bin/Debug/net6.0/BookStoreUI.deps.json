@@ -657,7 +657,6 @@
       "BLL/1.0.0": {
         "dependencies": {
           "BLL.Abstractions": "1.0.0",
-          "DAL.Abstractions": "1.0.0",
           "ceTe.DynamicPDF.CoreSuite.NET": "11.32.0",
           "iTextSharp": "5.5.13.3"
         },
@@ -667,7 +666,8 @@
       },
       "BLL.Abstractions/1.0.0": {
         "dependencies": {
-          "Core": "1.0.0"
+          "Core": "1.0.0",
+          "DAL": "1.0.0"
         },
         "runtime": {
           "BLL.Abstractions.dll": {}
@@ -684,7 +684,6 @@
       "DAL/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
-          "DAL.Abstractions": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.4",
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.4",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.4",
@@ -692,14 +691,6 @@
         },
         "runtime": {
           "DAL.dll": {}
-        }
-      },
-      "DAL.Abstractions/1.0.0": {
-        "dependencies": {
-          "Core": "1.0.0"
-        },
-        "runtime": {
-          "DAL.Abstractions.dll": {}
         }
       }
     }
@@ -1181,11 +1172,6 @@
       "sha512": ""
     },
     "DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DAL.Abstractions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

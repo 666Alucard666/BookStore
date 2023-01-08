@@ -671,22 +671,6 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
-      },
-      "DAL.Abstractions/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DAL.Abstractions.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DAL.Abstractions.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -1951,17 +1935,11 @@
       "type": "project",
       "path": "../Core/Core.csproj",
       "msbuildProject": "../Core/Core.csproj"
-    },
-    "DAL.Abstractions/1.0.0": {
-      "type": "project",
-      "path": "../DAL.Abstractions/DAL.Abstractions.csproj",
-      "msbuildProject": "../DAL.Abstractions/DAL.Abstractions.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Core >= 1.0.0",
-      "DAL.Abstractions >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Abstractions >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.2",
@@ -1973,20 +1951,22 @@
   "packageFolders": {
     "C:\\Users\\DVO\\.nuget\\packages\\": {},
     "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages": {},
-    "D:\\ToolboxNuGetPackages": {}
+    "D:\\ToolboxNuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj",
+      "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-      "outputPath": "D:\\LearningRepos\\BookStore\\DAL\\obj\\",
+      "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-        "D:\\ToolboxNuGetPackages"
+        "D:\\ToolboxNuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2005,11 +1985,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
-              "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj"
-            },
-            "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj": {
-              "projectPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj"
+            "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj"
             }
           }
         }

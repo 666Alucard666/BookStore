@@ -5,13 +5,13 @@ export default function OrderBooksPopup({ books, orderBooks }) {
   orderBooks.forEach((ob) => {
     if (
       books.findIndex((b) => {
-        return b.id === ob.bookId;
+        return b.productId === ob.productId;
       }) !== -1
     ) {
       items.push({
         book: books[
           books.findIndex((b) => {
-            return b.id === ob.bookId;
+            return b.productId === ob.productId;
           })
         ],
         count: ob.count,
@@ -60,7 +60,7 @@ export default function OrderBooksPopup({ books, orderBooks }) {
                 }}
                 className={index === active ? "active" : ""}
                 key={book}>
-                {book.name}
+                {book.name.substring(0, 20)}
                 <br />
                 Count: {count}
               </li>

@@ -11,7 +11,7 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 
-import logoSvg from "../assets/img/books-logo.svg";
+import logoSvg from "../assets/img/logotipe.png";
 import Button from "./Button";
 import { refreshedToken, signOut } from "../state/actions/authentification";
 import { clearCart } from "../state/actions/cartAction";
@@ -32,12 +32,15 @@ export default function Header() {
 
   const navigate = useNavigate();
 
-  const createBook = () => {
-    dispatch({
-      type: "ACTION_WITH_CREATE_MODAL",
-      payload: true,
-    });
+  const manageProd = () => {
+    navigate("/manageProducts");
   };
+  const manageWork = () => {
+    navigate("/manageWorkers")
+  }
+  const manageShop = () => {
+    navigate("/manageShops")
+  }
   const logOut = () => {
     dispatch(signOut());
     dispatch(clearCart());
@@ -66,8 +69,8 @@ export default function Header() {
           <div className="header__logo">
             <img width="70" height="60" src={logoSvg} alt="Books logo" />
             <div>
-              <h1>Freedom Read</h1>
-              <p>Only on book pages we feel freedom</p>
+              <h1>GigiFresh</h1>
+              <p>In fresh body is fresh spirit</p>
             </div>
           </div>
         </Link>
@@ -176,10 +179,18 @@ export default function Header() {
             ) : (
               ""
             )}
-            {user.role === "Admin" ? (
+            {user.role === "Administrator" ? (
+              <>
               <MenuItem sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Button onClick={createBook}>Create book</Button>
+                <Button onClick={manageProd}>Manage products</Button>
               </MenuItem>
+              <MenuItem sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Button onClick={manageWork}>Manage workers</Button>
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Button onClick={manageShop}>Manage shops</Button>
+                </MenuItem>
+                </>
             ) : (
               ""
             )}

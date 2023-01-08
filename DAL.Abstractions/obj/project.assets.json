@@ -93,26 +93,29 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\Models",
       "Core >= 1.0.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\DVO\\.nuget\\packages\\": {},
     "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages": {},
-    "D:\\ToolboxNuGetPackages": {}
+    "D:\\ToolboxNuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
+      "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
       "projectName": "DAL.Abstractions",
-      "projectPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
+      "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
       "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-      "outputPath": "D:\\LearningRepos\\BookStore\\DAL.Abstractions\\obj\\",
+      "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL.Abstractions\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-        "D:\\ToolboxNuGetPackages"
+        "D:\\ToolboxNuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -131,8 +134,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\LearningRepos\\BookStore\\Core\\Core.csproj": {
-              "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj"
+            "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj"
+            },
+            "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\Models": {
+              "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\Models"
             }
           }
         }
@@ -167,5 +173,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\Models'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\Models",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

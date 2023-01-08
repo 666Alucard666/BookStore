@@ -22,15 +22,15 @@ const getTotalSum = (obj, path) => {
 const cartReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "ADD_BOOK_CART": {
-      if (state.items[payload.id]?.items?.length+1 > state.items[payload.id]?.items[0]?.amountOnStore) {
+      if (state.items[payload.productId]?.items?.length+1 >= state.items[payload.productId]?.items[0]?.amountOnStore) {
         return state;
       }
-      const currentBooksItems = !state.items[payload.id]
+      const currentBooksItems = !state.items[payload.productId]
         ? [payload]
-        : [...state.items[payload.id].items, payload];
+        : [...state.items[payload.productId].items, payload];
       const newBooks = {
         ...state.items,
-        [payload.id]: {
+        [payload.productId]: {
           items: currentBooksItems,
           totalPrice: getTotalPrice(currentBooksItems),
         },

@@ -1,7 +1,6 @@
 ﻿using BLL.Abstractions.ServiceInterfaces;
-using ceTe.DynamicPDF;
 using Core.DTO_Models;
-using Core.Models;
+using DAL.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +25,7 @@ namespace BookStoreUI.Controllers
             {
                 return BadRequest("Wrong order data!");
             }
-            if (order.Books.Count == 0)
+            if (order.ProductsList.Count == 0)
             {
                 return BadRequest("0 books in basket");
             }
@@ -39,7 +38,7 @@ namespace BookStoreUI.Controllers
             return Ok("Order was created!");
         }
 
-        [HttpDelete("DeleteOrder")]
+        [HttpPut("DeleteOrder")]
         public async Task<ActionResult> Delete(DeleteOrderRequest order)
         {
             if (order == null)
@@ -55,10 +54,10 @@ namespace BookStoreUI.Controllers
             return Ok();
         }
         [HttpGet("GetOrderByNumber")]
-        public async Task<ActionResult<Order>> GetOrderByNumber(int orderNumber)
+        public async Task<ActionResult<Order>> GetOrderByNumber(Guid orderNumber)
         {
             var h = Request.Headers;
-            if (orderNumber == 0)
+            if (orderNumber == Guid.Empty)
             {
                 return BadRequest("Wrong orderNumber");
             }
@@ -71,34 +70,63 @@ namespace BookStoreUI.Controllers
         }
 
         [HttpGet("GetOrdersByUser")]
-        public ActionResult<List<Order>> GetOrdersByUserId([FromQuery]int userId)
+        public async Task<ActionResult<List<Order>>> GetOrdersByUserId([FromQuery]Guid userId)
         {
-            if (userId == 0)
+            if (userId == Guid.Empty)
             {
                 return BadRequest("Wrong user");
             }
 
-            var b = _orderService.GetAllOrdersByUser(userId).ToList();
-            if (b == null || b.Count == 0)
+            var b = await _orderService.GetAllOrdersByCustomer(userId);
+            if (b == null || !b.Any())
             {
                 return BadRequest("None orders for this user");
             }
             return Ok(b);
         }
-        [HttpGet("GetOrdersReceipt")]
-        public async Task<ActionResult<bool>> GetOrdersReceipt([FromQuery]int id)
+        
+        [HttpGet("GetOrdersByShop")]
+        public async Task<ActionResult<List<Order>>> GetOrdersByShop([FromQuery]Guid shopId)
         {
-            if (id == 0)
+            if (shopId == Guid.Empty)
+            {
+                return BadRequest("Wrong shop id");
+            }
+
+            var b = await _orderService.GetAllOrdersByShop(shopId);
+            if (b == null || !b.Any())
+            {
+                return BadRequest("None orders for this shop");
+            }
+            return Ok(b);
+        }
+        
+        [HttpGet("GetOrdersReceipt")]
+        public async Task<ActionResult<bool>> GetOrdersReceipt([FromQuery]Guid id)
+        {
+            if (id == Guid.Empty)
             {
                 return BadRequest("Wrong id!");
             }
-            var b = await _orderService.CreateReceipt(id);
+            var b = await _orderService.CreateAndSendReceipt(id);
             if (b == null)
             {
                 return BadRequest("None orders with this number");
             }
             return Ok(true);
         }
-        
+
+        [HttpGet("GetPopularRecipientCities")]
+        public async Task<ActionResult<IEnumerable<OrderCities>>> GetPopularRecipientCities()
+        {
+            var res = await _orderService.GetPopularRecipientCities();
+            if (!res.Any())
+            {
+                return BadRequest("Error");
+            }
+
+            return Ok(res);
+        }
+
     }
 }

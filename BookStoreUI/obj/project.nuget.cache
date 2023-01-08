@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HRmEUp5gAYUVkxS7K0JoE0CHJR4osCum9kRkFSynYXfKZsaLkIQMqwdLeygmr7EA05msgeZM4FESEfWscpFnCg==",
+  "dgSpecHash": "VQDC6YBzXDKMx2B3yzt3YyUjq1SdTDyp2Z4b+D5L7XxKM/KmLxgfl+sDJ6ONMmpHBEXOEfTf9RXHqeluIUGlCQ==",
   "success": true,
-  "projectFilePath": "D:\\LearningRepos\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
+  "projectFilePath": "C:\\Users\\DVO\\Coursach\\BookStore\\BookStoreUI\\BookStoreUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DVO\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\cete.dynamicpdf.coresuite.net\\11.32.0\\cete.dynamicpdf.coresuite.net.11.32.0.nupkg.sha512",

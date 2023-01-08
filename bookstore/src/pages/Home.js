@@ -8,52 +8,73 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import EditModalWindow from "../components/books/EditModalWindow";
 import ClearIcon from "@mui/icons-material/Clear";
 import detecive from "../assets/img/detective.png";
-import { getBooks } from "../api/api";
+import { getProducts } from "../api/api";
 import { Categories, SortPopup } from "../components/index";
 import { useDispatch, useSelector } from "react-redux";
-import { pickBook, setBooks } from "../state/actions/booksAction";
+import { pickProduct, setProducts } from "../state/actions/booksAction";
 import { BooksWrap } from "../components/books/BooksWrap";
-import CreateModalWindow from "../components/books/CreateModalWindow";
+import { Grid } from "@mui/material";
 
 function Home() {
+
   const categories = [
-    "Fantasy",
-    "Comics",
-    "Adventure",
-    "Classics",
-    "Detective",
-    "Romance",
-    "Horror",
-  ];
-  const sortCategories = ["Alphabet", "Price", "Date"];
-  const [search, setSearch] = React.useState("");
+    {
+      name:"Nails Care",
+      value:"Nails"
+    },
+    {
+      name:"Skin Care",
+      value:"Skin"
+    },
+    {
+      name:"Oral Cave Care",
+      value:"Oral"
+    },
+    {
+      name:"Hair Care",
+      value:"Hair"
+    },
+    ];
+  const sortCategories = ["Alphabet", "Price"];
+  const [search, setSearch] = React.useState({
+    name: "",
+    producingCountry: "",
+    producingCompany: "",
+  });
   const books = useSelector((state) => state.books);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    getBooks().then((res) => dispatch(setBooks(res.data)));
-    dispatch(pickBook({}));
+    getProducts().then((res) => dispatch(setProducts(res.data)));
+    dispatch(pickProduct({}));
   }, [dispatch]);
 
-  const universalSearch = (row) => {
-    const value = row.name + row.author;
-    return value?.toLowerCase().indexOf(search.toLowerCase()) > -1;
-  };
-
   function searchBook(rows) {
-    return rows?.filter((row) => universalSearch(row));
+    return rows?.filter(function (item) {
+      for (var key in search) {
+        if (search[key] === "") {
+          continue;
+        }
+        if (item[key] === undefined || !item[key].toLowerCase().includes(search[key].toLowerCase()))
+          return false;
+      }
+      return true;
+    });
   }
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
+    setSearch({ ...search, [e.target.name]: e.target.value });
   };
 
   const clearSearchField = () => {
-    setSearch("");
+    setSearch({
+      name: "",
+      producingCountry: "",
+      producingCompany: "",
+    });
   };
 
   return (
@@ -64,7 +85,7 @@ function Home() {
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
-          <h2 className="content__title">Books</h2>
+          <h2 className="content__title">Products</h2>
         </div>
         <div>
           <Accordion>
@@ -73,7 +94,7 @@ function Home() {
               aria-controls="panel1a-content"
               id="panel1a-header">
               <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
-                <div>Search book</div>{" "}
+                <div>Search product</div>{" "}
                 <div>
                   <SearchIcon
                     fontSize="small"
@@ -83,25 +104,72 @@ function Home() {
               </div>
             </AccordionSummary>
             <AccordionDetails>
-              <TextField
-                value={search}
-                onChange={handleSearch}
-                label="Search book"
-                variant="outlined"
-                color="warning"
-                size="small"
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      {search !== "" && (
-                        <IconButton onClick={clearSearchField}>
-                          <ClearIcon />
-                        </IconButton>
-                      )}
-                    </InputAdornment>
-                  ),
-                }}
-              />
+              <Grid item>
+                <TextField
+                  value={search.name}
+                  onChange={handleSearch}
+                  label="Name"
+                  name="name"
+                  variant="outlined"
+                  color="warning"
+                  size="small"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        {search !== "" && (
+                          <IconButton onClick={clearSearchField}>
+                            <ClearIcon />
+                          </IconButton>
+                        )}
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+              <Grid item sx={{ marginTop: "10px" }}>
+                <TextField
+                  value={search.producingCompany}
+                  onChange={handleSearch}
+                  label="Company"
+                  name="producingCompany"
+                  variant="outlined"
+                  color="warning"
+                  size="small"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        {search !== "" && (
+                          <IconButton onClick={clearSearchField}>
+                            <ClearIcon />
+                          </IconButton>
+                        )}
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+              <Grid item sx={{ marginTop: "10px" }}>
+                <TextField
+                  value={search.producingCountry}
+                  onChange={handleSearch}
+                  label="Country"
+                  name="producingCountry"
+                  variant="outlined"
+                  color="warning"
+                  size="small"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        {search !== "" && (
+                          <IconButton onClick={clearSearchField}>
+                            <ClearIcon />
+                          </IconButton>
+                        )}
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
             </AccordionDetails>
           </Accordion>
         </div>
@@ -113,15 +181,13 @@ function Home() {
           <div className="container container--cart">
             <div className="cart cart--empty">
               <h2>
-                None books <icon>😕</icon>
+                None products <icon>😕</icon>
               </h2>
               <img src={detecive} alt="Empty cart" />
             </div>
           </div>
         )}
       </div>
-      <EditModalWindow />
-      <CreateModalWindow />
     </div>
   );
 }

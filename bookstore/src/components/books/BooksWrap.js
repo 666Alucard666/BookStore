@@ -4,11 +4,11 @@ import BookBlock from "./BookBlock";
 export const BooksWrap = ({ data, cart, }) => {
   return (
     <>
-      {data.map((book) => (
+      {data.map((product) => (
         <BookBlock
-          key={book.id}
-          addedCount={cart.items[book.id] && cart.items[book.id].items.length}
-          book={book}
+          key={product.productId}
+          addedCount={cart.items[product.productId] && cart.items[product.productId].items.length}
+          product={product}
         />
       ))}
     </>

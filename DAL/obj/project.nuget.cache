@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RQvn+BRJKsqRbRgNXKJ/SQYDhGysZsz1Kjq9jiOTJ09rQbiuSnEuzHnCeiYci0cCawj7cHp4tbjc6F+p6VkhcA==",
+  "dgSpecHash": "pH/K8+vHuM6IZGAQjODR7KmVSNM35oD3lVnAfPBD3W2cJkVDnluJ+wekAijAMV5BrlWv3VgwePCo5Bb5fmLZ0w==",
   "success": true,
-  "projectFilePath": "D:\\LearningRepos\\BookStore\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DVO\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\DVO\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

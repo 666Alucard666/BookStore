@@ -78,20 +78,22 @@
   "packageFolders": {
     "C:\\Users\\DVO\\.nuget\\packages\\": {},
     "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages": {},
-    "D:\\ToolboxNuGetPackages": {}
+    "D:\\ToolboxNuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "D:\\LearningRepos\\BookStore\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\DVO\\.nuget\\packages\\",
-      "outputPath": "D:\\LearningRepos\\BookStore\\Core\\obj\\",
+      "outputPath": "C:\\Users\\DVO\\Coursach\\BookStore\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\DVO\\Documents\\.net\\NuGetPackages",
-        "D:\\ToolboxNuGetPackages"
+        "D:\\ToolboxNuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\DVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

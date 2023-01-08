@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import { useDispatch, useSelector } from "react-redux";
 import { Paper } from "material-ui";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { pickBook } from "../../state/actions/booksAction";
+import { pickProduct } from "../../state/actions/booksAction";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -87,7 +87,7 @@ export default function EditModalWindow() {
       image: "",
       created: book.created,
     });
-    dispatch(pickBook({}));
+    dispatch(pickProduct({}));
   };
   const handleExitSubmit = async (event) => {
     event.preventDefault();
@@ -108,7 +108,7 @@ export default function EditModalWindow() {
       image: "",
       created: book.created,
     });
-    dispatch(pickBook({}));
+    dispatch(pickProduct({}));
   };
   const [bookForm, setBookForm] = React.useState({
     id: book.id,
