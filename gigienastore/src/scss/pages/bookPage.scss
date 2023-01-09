@@ -1,0 +1,65 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    &__info {
+        width: 600px;
+        word-wrap: break-word;
+        margin-left: 30px;
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .info-list {
+            margin-top: 50px;
+
+            li {
+                margin-top: 10px;
+            }
+
+           .infoLabel {
+               font-size: 20px;
+           }
+
+           .info {
+               color: #808080;
+               font-weight: 700;
+               font-size: 18px;
+           }
+
+           .bookDescription {
+               width: 100%;
+               border: 1px solid #ccc;
+               border-radius: 10px;
+               padding: 15px;
+               margin-top: 20px;
+               font-weight: 600;
+           }
+        }
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    width: 935px;
+    margin-top: 50px;
+
+    &__price {
+        .price {
+            font-weight: 700;
+            font-size: 24px;
+        }
+    }
+
+    &__buttons {
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -183,7 +183,7 @@ public class PersonService : IPersonService
                 table.Rows[i].Cells.Add(productDto.ProducingCompany);
                 table.Rows[i].Cells.Add(productDto.ProducingCountry);
                 table.Rows[i].Cells.Add($"{productDto.AmountOnStore}");
-                table.Rows[i].Cells.Add($"{productDto.CountOrders}$");
+                table.Rows[i].Cells.Add($"{productDto.CountOrders}");
                 table.Rows[i].Cells.Add($"{productDto.Price}$");
                 i++;
             }

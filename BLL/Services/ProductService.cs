@@ -415,7 +415,7 @@ public class ProductService : IProductService
             Contraindication = x.ProductInfo.Contraindication,
             Category = x.ProductInfo.Category,
             Gender = x.ProductInfo.Gender,
-            CountOrders = productsId.Select(x => x.Count).Sum(),
+            CountOrders = productsId.Where(a => a.ProductId == x.ProductId).Select(x => x.Count).Sum(),
             AmountOnStore = x.ShopProducts.Select(x => x.Count).Sum(),
             ShopProducts = x.ShopProducts.Select(x => new ShopProductsDto
             {

@@ -32,7 +32,7 @@ public class Program
             {
                 var jD = await scheduler.GetJobDetail(job);
                 await scheduler.DeleteJob(job);
-                await scheduler.ScheduleJob(jD, TriggerBuilder.Create().WithCronSchedule(environment.IsDevelopment() || environment.IsEnvironment("Local") ? "0 0/3 * 1/1 * ? *": "0 0 12 30 1/1 ? *", x => x.WithMisfireHandlingInstructionIgnoreMisfires()).ForJob(job).Build());
+                await scheduler.ScheduleJob(jD, TriggerBuilder.Create().WithCronSchedule(environment.IsDevelopment() || environment.IsEnvironment("Local") ? "0 0/2 * 1/1 * ? *": "0 0 12 30 1/1 ? *", x => x.WithMisfireHandlingInstructionIgnoreMisfires()).ForJob(job).Build());
             }
         }
         catch (Exception e)
