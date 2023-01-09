@@ -1,0 +1,315 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+html, body {
+    font-family: 'Montserrat' sans-serif;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+.data {
+    background-color: #313131;
+    padding: 40px 0px 30px 0px;
+  }
+  
+  .data__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 -13px;
+    flex-wrap: wrap;
+  }
+  
+  .data__column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 25%;
+            flex: 1 1 25%;
+    margin: 0 13px;
+    min-width: 220px;
+  }
+  
+  .data__title {
+    font-family: 'Montserrat' sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #f8f8f8;
+  }
+  
+  .data__title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #3a3a3a;
+    margin: 15px 0px 0px 0px;
+  }
+  
+  .contacts-item {
+    font-size: 14px;
+    line-height: 1.210;
+    display: flex;
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .contacts-link {
+    color: #fff;
+    opacity: 0.6;
+  }
+  .contacts-link:hover {
+      color: rgb(148, 148, 148);
+  }
+  .contacts-link:active {
+    color: rgb(148, 148, 148);
+  }
+
+  .fab {
+      padding-top: 8px;
+      align-items: center;
+      color: #fff;
+  }
+
+
+  
+  .details__items {
+    font-family: 'Montserrat' sans-serif;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #999999;
+    min-width: 230px;
+  }
+  
+  .details__item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px 0px 0px 0px;
+  }
+
+  .details_span {
+      margin-top: 5px;
+  }
+  
+  .details__subtitle {
+    font-weight: 700;
+  }
+  
+  
+  .social__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    margin: 17px 0px 0px 0px;
+  }
+  
+  .social__link::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    width: 100%;
+    height: 1px;
+    background-color: #383838;
+    margin: 15px 0px 0px 0px;
+  }
+  
+  .social__icon {
+    width: 32px;
+    height: 32px;
+    background-color: #383838;
+    border-radius: 100%;
+    text-align: center;
+    margin: 0px 10px 0px 0px;
+  }
+  
+  .social__icon img {
+    margin: 8px 0px 0px 0px;
+  }
+  
+  .social__icon:hover {
+    -webkit-box-shadow: 0 0 3px rgba(253, 253, 253, 0.5);
+            box-shadow: 0 0 3px rgba(253, 253, 253, 0.5);
+  }
+  
+  .social__icon:active {
+    width: 30px;
+    height: 30px;
+    margin: 0px 12px 2px 0px;
+  }
+  
+  .social__text {
+    font-family: 'Montserrat' sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+  }
+  
+  .social__text:after {
+      display: block;
+      position: absolute;
+      left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+      width: 0;/*задаём длинну линии до наведения курсора*/
+      height: 2px; /*задаём ширину линии*/
+      background-color: #00A371; /*задаём цвет линии*/
+    margin-top: 13px;
+      content: "";
+      transition: width 0.3s ease-out; /*задаём время анимации*/
+  }
+  
+  .social__text:hover:after,
+  .social__text:focus:after {
+      width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+  }
+  
+  
+  .blog__item {
+    padding: 20px 0px 0px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .blog__title {
+    font-family: 'Montserrat' sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 700;
+    color: #999999;
+  }
+  
+  .currency {
+    width: 250px;
+  }
+  
+  
+  /* Footer */
+  .footer {
+    padding: 20px 0px;
+    background-color: #313131;
+    flex-wrap: wrap;
+  }
+  
+  .footer__body::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #3a3a3a;
+    margin: 0px 0px 20px 0px;
+  }
+  
+  .footer__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-family: 'Montserrat' sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    color: #999999;
+  }
+  
+
+  @media screen and (max-width: 1255px) {
+    .currency {
+      width: 230px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .currency_title {
+      margin-top: 50px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .currency {
+      display: flex;
+      flex-wrap: wrap;
+      width: 120px;
+    }
+
+    .currency_title {
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: 506px) {
+    .details__item {
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile_title {
+      margin-top: 50px;
+    }
+
+    .contacts-item {
+      flex-wrap: wrap;
+    }
+
+    .currency {
+      width: 100px;
+
+    }
+  }
+
+  @media screen and (max-width: 497px) {
+    .social__link {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 495) {
+    .contact-item {
+      flex-wrap: wrap;
+    }
+
+    .social__link {
+      display: flex;
+      justify-content: center;
+    }
+  }

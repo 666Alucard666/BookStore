@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "b7zMmIFBCqLJcRpneB7/uFuhR9Yb62GXXwYEYy/ZdWv8PfM9irColg+ApgHVS7RuyGFZy/dHVU5yjegaq23T0w==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL.Abstractions\\DAL.Abstractions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DVO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\DVO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\Models'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\DVO\\Coursach\\BookStore\\DAL\\Models",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
